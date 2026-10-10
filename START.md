@@ -1,0 +1,96 @@
+# Start a new app repository
+
+**Law:** a new app repository takes data from the public playbook BEFORE any
+app code. Pin a full commit SHA. The copied files are a frozen snapshot, not a
+submodule.
+
+## 1. First message in the new session
+
+Paste this exact template as the first message:
+
+```text
+Before any code: read the public playbook repo https://github.com/<OWNER>/indie-playbook at commit <SHA> and follow its START.md.
+```
+
+Replace `<OWNER>` and `<SHA>` with the real owner and full commit SHA. This
+URL assumes the playbook is published as `<OWNER>/indie-playbook`. If this
+copy remains in a differently named repository, use that repository's real
+public URL in the first message before starting an app.
+
+## 2. Snapshot and commit before app code
+
+From the root of a new, otherwise-empty app repository, substitute the real
+owner and 40-character SHA below. The commands copy only `templates/` and
+`knowledge/`, verify the checked-out commit, write provenance, and commit the
+snapshot. They do not create a submodule.
+
+```sh
+set -eu
+PLAYBOOK_URL='https://github.com/<OWNER>/indie-playbook.git'
+PLAYBOOK_SHA='<SHA>'
+TMP_DIR="$(mktemp -d)"
+
+git clone --quiet "$PLAYBOOK_URL" "$TMP_DIR/playbook"
+git -C "$TMP_DIR/playbook" checkout --quiet --detach "$PLAYBOOK_SHA"
+test "$(git -C "$TMP_DIR/playbook" rev-parse HEAD)" = "$PLAYBOOK_SHA"
+
+if [ -e templates ] || [ -e knowledge ]; then
+  echo 'Refusing to overwrite an existing snapshot.' >&2
+  exit 1
+fi
+cp -R "$TMP_DIR/playbook/templates" ./templates
+cp -R "$TMP_DIR/playbook/knowledge" ./knowledge
+
+if [ ! -f README.md ]; then
+  printf '# YOUR_APP_NAME\n\n' > README.md
+fi
+if grep -Fq 'Bootstrapped from indie-playbook @' README.md; then
+  echo 'README already has provenance; do not append it twice.' >&2
+  exit 1
+fi
+printf '\nBootstrapped from indie-playbook @ %s on %s\n' \
+  "$PLAYBOOK_SHA" "$(date -u +%F)" >> README.md
+
+git add templates knowledge README.md
+git commit -m "Bootstrap playbook snapshot $PLAYBOOK_SHA"
+rm -rf "$TMP_DIR"
+```
+
+The README provenance line must read:
+
+```text
+Bootstrapped from indie-playbook @ <sha> on <date>
+```
+
+Keep it when you later fill the app README. Keep the copied snapshot unchanged;
+update it only through a deliberate, documented refresh commit.
+
+## 3. Only after the snapshot commit
+
+1. Fill `templates/readme-app.md` and use it as the app's `README.md`, keeping
+   the provenance line.
+2. Create the app's own root `LICENSE` (MIT or GPL-3.0) before app code; do not
+   mistake the playbook's mixed license notice for the app's license.
+3. Create the smallest Gradle skeleton and a hello screen.
+4. Copy `templates/ci-build.yml` to `.github/workflows/ci-build.yml`; wire the
+   owner's signing secrets by name, never by committing secret values.
+5. Get CI green (unit tests and signed release artifacts).
+6. Write a short `DECISIONS` log, then implement app code under `RULES.md`.
+
+## 4. Pre-code checklist
+
+Any **NO** or unchecked item blocks coding. Keep personal tester details
+outside Git.
+
+- [ ] Play account exists? Account type and required production-access steps
+      are understood.
+- [ ] testers-clock running? The 25-person opt-in plan and a dated start plan
+      are ready. The Play 14-day clock starts only when a closed-test build is
+      live and real testers opt in; never claim it started early.
+- [ ] Niche verdict line written? Use `knowledge/niche-method.md`.
+- [ ] License chosen? MIT or GPL-3.0, with the app's license template ready.
+
+For eligible personal Play accounts created after 2023-11-13, the current
+closed-test gate is at least 12 continuously opted-in testers for 14 days.
+Recruiting 25 genuine volunteers is a buffer, not a claim that Play requires
+25 or 20. Verify the current rule in Play Console before starting the clock.
