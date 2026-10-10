@@ -2,7 +2,7 @@
 
 # [YOUR_APP_NAME]
 
-Bootstrapped from indie-playbook @ <sha> on <date>
+Bootstrapped from AppFlow @ <sha> on <date>
 
 [One-sentence, factual description of the app and who it helps.]
 

@@ -1,7 +1,9 @@
 # Maintenance
 
 Keep this playbook useful on a phone: short markdown, plain links, no build
-step, and no copied credentials or personal data. The owner-approval and
+step, and no copied credentials or unnecessary personal data. The two owner-
+approved author emails in `RULES.md` are the sole intentional personal-email
+exception; never repeat them in portable app materials. The owner-approval and
 commit-identity gates in `RULES.md` apply to maintenance too: a review, branch
 push, or green CI does not authorize a PR, merge, release, publication, or
 deployment. For AppFlow commits, use an author address listed in `RULES.md`
@@ -15,6 +17,8 @@ app templates or a new app repository.
 - Search for changed Google Play and AdMob requirements; update dated claims
   and their sources, not just wording.
 - Verify every internal link and confirm the required files still exist.
+- Check `APP_LIST.md` against Play Console/live listings; names, package IDs,
+  URLs, statuses, and verification dates must be exact and current.
 - Read `RULES.md` for contradictions and keep each law unchanged unless the
   owner deliberately decides otherwise.
 - Record a new full commit SHA for future app bootstraps. Existing app repos
@@ -30,7 +34,8 @@ app templates or a new app repository.
 - Re-read privacy, Data Safety, tester, and ad guidance against current official
   documentation. Remove stale examples rather than guessing.
 - Check that the repository contains no real keys, account IDs, AdMob IDs,
-  private tester details, or other personal data.
+  private tester details, or unnecessary personal data. The only intentional
+  personal-email exception is the pair listed in `RULES.md`; do not duplicate it.
 
 ## Each app, every year (and before a Play deadline)
 

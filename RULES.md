@@ -26,6 +26,20 @@ Implementation note: treat the required ad-free IAP as the one opt-out
 exception alongside one primary monetization model—not as permission to stack
 multiple ad-driven or paid mechanics.
 
+## App discovery and Play Store registry
+
+- The owner does not have to arrive with an app idea. For every new app, the
+  agent researches and presents 3–5 differentiated options with linked, dated
+  evidence on user need, competitors/reviews, owner advantage, four-week
+  offline-first scope, monetization, privacy, and policy risks.
+- Compare and recommend; do not decide for the owner. The owner may choose,
+  combine, or refine an option. Do not create an app repository or write app
+  code until the owner explicitly selects a researched direction.
+- Maintain `APP_LIST.md` as the portfolio register. Record the exact official
+  Google Play title only when confirmed in Play Console or on the live listing;
+  include package ID, listing URL, status, and verification date. Never invent
+  an official title or put working-name guesses in the official-name field.
+
 ## GitHub authority and approval gate
 
 These process rules supplement the 14 laws above; they do not change their

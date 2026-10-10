@@ -4,7 +4,7 @@ Replace bracketed fields before sending. Each prompt assumes the app repo has
 already frozen `templates/` and `knowledge/` from a pinned playbook commit.
 Do not paste secrets, account IDs, tester contacts, or real ad IDs into prompts.
 
-## P1 — niche validation
+## P1 — research app options
 
 ```text
 Change-control: use only the assigned session branch. Never create/switch
@@ -23,19 +23,25 @@ current git/PR/CI state and do not duplicate an existing run.
 Do not merge, release, publish, deploy, or dispatch an expensive/destructive
 workflow without explicit authorization for that action. A code request,
 branch push, or green CI is not authorization; stop at the approval gate.
-Validate [NICHE] for [COUNTRY / LANGUAGE / AUDIENCE] before any code. Follow
-knowledge/niche-method.md. Seed from the owner's real experience; search Play
-for the exact phrase a user types; record the query, country, date, and links;
-open the top five relevant listings; record rating and last update; read ten
-1-star reviews per relevant listing and turn verified complaints into needs.
-Use 3.5–4.2 stars and updates older than one year as signals, not proof. Decide
-whether the market is crowded-but-bad, empty, or dominated by a giant. Check
-whether the owner has a real niche advantage and verify incumbent ad friction
-by using the apps, not by guessing from store pages. Cite evidence and
-uncertainty. Output one verdict line in this format:
-Demand: [...]; staleness: [...]; complaints: [...]; owner advantage: [...].
-Then give the top three 1-star complaints as a concrete, testable v1 spec.
-Do not write code. If evidence is insufficient, say what to inspect next.
+The owner does not need to arrive with a chosen app or niche. Research
+3–5 differentiated Android app opportunities for Indian users using current
+Play Store evidence and `knowledge/niche-method.md`. If key constraints such as
+the owner's experience, interests, time, or target language are missing and
+would change the shortlist, ask concise questions first; otherwise proceed.
+
+For every option, report the target user and painful job, exact search phrase,
+country/date, linked Play listings, market crowding, and any verified review
+signals. Deep-dive the leading one or two: inspect their top five relevant
+listings and read ten recent one-star reviews per leading option. Separate
+observed facts from inference and state uncertainty. Include the owner's real
+advantage, a distinct offline-first four-week v1, privacy/licensing/policy risks,
+plausible monetization (without revenue promises), and a measurable kill test.
+
+Rank the options in a comparison table and recommend the strongest one or two
+with evidence. Do not choose for the owner: invite them to select, combine, or
+refine an option, then stop. Do not create an app repository or write app code
+until the owner explicitly chooses a researched direction. If evidence is too
+thin, say what to inspect next instead of inventing demand.
 ```
 
 ## P2 — repo initialization
@@ -57,9 +63,11 @@ current git/PR/CI state and do not duplicate an existing run.
 Do not merge, release, publish, deploy, or dispatch an expensive/destructive
 workflow without explicit authorization for that action. A code request,
 branch push, or green CI is not authorization; stop at the approval gate.
-Before app code, read the public playbook at [PLAYBOOK_URL] and pinned commit
-[PLAYBOOK_SHA]. Follow its START.md. Copy templates/ and knowledge/ into this
-new repo as frozen files, add the provenance line to README.md, and commit
+Proceed only after the owner explicitly selects one of the researched app
+options. If no option has been selected, stop before creating a repo or code.
+Before app code, read https://github.com/pabi277/AppFlow at pinned commit
+[PLAYBOOK_SHA] and follow its START.md. Copy templates/ and knowledge/ into
+this new repo as frozen files, add the provenance line to README.md, and commit
 that snapshot first. Then fill templates/readme-app.md as README.md, choose
 MIT, create a minimal Gradle/AGP hello-screen skeleton, wire
 ci-build.yml using secret names only, add a unit test, and make CI green with

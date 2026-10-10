@@ -29,6 +29,10 @@ and `knowledge/` before any app code exists.
   pre-authorized. Never use an agent's personal email/account or copy these
   addresses into app templates or new app repositories; keep committer identity
   owner-approved.
+- For each app, the agent researches 3–5 evidence-backed options; the owner
+  selects or refines one before any app repo or code is created.
+- Keep `APP_LIST.md` as the portfolio register and record only confirmed,
+  exact Google Play titles; never invent official names.
 - The owner verifies facts, legal/tax choices, app content, and final releases.
 
 ## Money model
