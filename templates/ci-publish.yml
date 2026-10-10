@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copy to .github/workflows/ci-publish.yml only after reviewing it.
 # This manual workflow builds a signed AAB and publishes to the INTERNAL track.
+# Dispatch only after explicit owner authorization; green CI is not
+# publish permission.
 # Configure GitHub secrets (never commit values): the four ANDROID_KEYSTORE_*
 # secrets used by ci-build.yml, plus PLAY_SERVICE_ACCOUNT_JSON.
 # Configure the non-secret Actions variable ANDROID_PACKAGE_NAME.

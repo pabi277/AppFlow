@@ -23,6 +23,8 @@ and `knowledge/` before any app code exists.
   16 / API 36 or higher from 2026-08-31; check the live policy before release.
 - Keep credentials, account identifiers, signing keys, service-account JSON,
   tester contact lists, and real AdMob IDs out of this playbook.
+- GitHub control is owner-gated: no PR, merge, `main` push, release, Play
+  submission, or deployment without explicit permission in chat.
 - The owner verifies facts, legal/tax choices, app content, and final releases.
 
 ## Money model

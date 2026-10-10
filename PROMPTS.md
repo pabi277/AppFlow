@@ -7,6 +7,15 @@ Do not paste secrets, account IDs, tester contacts, or real ad IDs into prompts.
 ## P1 — niche validation
 
 ```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
 Validate [NICHE] for [COUNTRY / LANGUAGE / AUDIENCE] before any code. Follow
 knowledge/niche-method.md. Seed from the owner's real experience; search Play
 for the exact phrase a user types; record the query, country, date, and links;
@@ -25,6 +34,15 @@ Do not write code. If evidence is insufficient, say what to inspect next.
 ## P2 — repo initialization
 
 ```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
 Before app code, read the public playbook at [PLAYBOOK_URL] and pinned commit
 [PLAYBOOK_SHA]. Follow its START.md. Copy templates/ and knowledge/ into this
 new repo as frozen files, add the provenance line to README.md, and commit
@@ -39,6 +57,15 @@ passed or failed; do not merge or publish without my approval.
 ## P3 — v1 skeleton
 
 ```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
 Design and then, only after I approve the plan, implement a tiny offline-first
 Android v1 for [NICHE]. Keep source data in versioned assets (no backend or
 login unless evidence proves necessary). First list the user problem, the
@@ -52,6 +79,15 @@ within four weeks. Do not add features outside the approved plan.
 ## P4 — ads wiring
 
 ```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
 Wire ads only after I approve the placement plan. Read
 knowledge/monetization.md and templates/admob-checklist.md. Use official AdMob
 test units during development; keep all IDs as placeholders or protected
@@ -66,6 +102,15 @@ blocked when Policy says no. Do not click live ads or submit a purchase.
 ## P5 — publish
 
 ```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
 Prepare a release without exposing credentials. First verify green CI, signed
 AAB output, version code, target API, privacy policy, Data Safety, content
 rating, listing, and tester status. Prefer the reviewed manual AAB handoff if
@@ -79,6 +124,15 @@ steps. Stop before submitting a production release.
 ## P6 — store listing
 
 ```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
 Using this approved niche verdict line: [VERDICT], draft a factual Play short
 description (within the current character limit), a long description, and a
 shot-list for phone screenshots. Do not invent features, official affiliation,
@@ -91,6 +145,15 @@ Do not upload assets or publish the listing.
 ## P7 — review replies
 
 ```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
 Draft polite, specific replies to the five latest reviews pasted below. Do
 not expose personal data, argue, ask for a positive rating, promise an
 unverified fix, or mention private account details. For bug reports, thank the
@@ -103,6 +166,15 @@ do not automate posting.
 ## P8 — kill decision
 
 ```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
 Compare the first four weeks of [APP] against the pre-written kill criteria
 and the anonymized numbers below. Separate observed facts from interpretation;
 include install, activation, retention, useful-action, crash, review, and

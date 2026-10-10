@@ -4,6 +4,19 @@
 app code. Pin a full commit SHA. The copied files are a frozen snapshot, not a
 submodule.
 
+## GitHub authority rule
+
+- Use only the assigned working branch. Never create/switch branches, push to
+  `main`, force-push, or discard work with `git reset --hard`.
+- Do not create/open a PR without the owner's explicit command in chat. Do not
+  merge without separate explicit authorization. A request to code, a branch
+  push, or green CI does not authorize a PR or merge.
+- Work one task at a time; do not parallelize tasks or open a second PR while
+  any PR is open. Check the branch, working tree, PRs, and CI before actions;
+  do not duplicate an existing PR or run.
+- Do not release, publish, deploy, or dispatch an expensive/destructive action
+  without explicit permission. Stop at the approval gate.
+
 ## 1. First message in the new session
 
 Paste this exact template as the first message:

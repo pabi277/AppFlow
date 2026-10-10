@@ -1,7 +1,9 @@
 # Maintenance
 
 Keep this playbook useful on a phone: short markdown, plain links, no build
-step, and no copied credentials or personal data.
+step, and no copied credentials or personal data. The owner-approval gate in
+`RULES.md` applies to maintenance too: a review, branch push, or green CI does
+not authorize a PR, merge, release, publication, or deployment.
 
 ## Quarterly playbook review
 

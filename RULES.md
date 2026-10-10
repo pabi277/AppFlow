@@ -25,3 +25,32 @@ before every release; this number changes over time.
 Implementation note: treat the required ad-free IAP as the one opt-out
 exception alongside one primary monetization model—not as permission to stack
 multiple ad-driven or paid mechanics.
+
+## GitHub authority and approval gate
+
+These process rules supplement the 14 laws above; they do not change their
+wording. They adapt the owner-approval rules in CodeC's [`rule.md` §§2–4](https://github.com/pabi277/CodeC/blob/5cbc1c0a394b810e22928d247649ee2c2cb1bba3/rule.md)
+and its [README contributor guidance](https://github.com/pabi277/CodeC/blob/5cbc1c0a394b810e22928d247649ee2c2cb1bba3/README.md),
+checked on 2026-10-10 at CodeC main commit
+`5cbc1c0a394b810e22928d247649ee2c2cb1bba3`. CodeC-specific product
+invariants are not imported into AppFlow.
+
+- **Branch discipline:** work only on the assigned current session branch. Never
+  create or switch to another branch, push to `main`, or use `git push --force`.
+  Commit and push only to the assigned branch when the requested work calls for
+  it. Never use `git reset --hard`; protect existing work.
+- **PR approval:** do not create or open a pull request without the owner's
+  explicit command in chat. Do not merge without a separate explicit command.
+  Permission to edit, commit, push a branch, or obtain green CI is **not**
+  permission to create a PR or merge it. “Open a PR” does not mean “merge it.”
+- **Release approval:** do not push to `main`, tag a release, submit to Google
+  Play, publish an artifact, or deploy a site/package without explicit owner
+  authorization.
+- **One task at a time:** do not parallelize tasks or create a second PR while
+  any PR is open. Check the current branch, working tree, PRs, and CI runs
+  before GitHub actions; do not duplicate an existing run.
+- **Expensive/destructive actions:** do not dispatch these workflows, releases,
+  or device tests without explicit confirmation. A green check is evidence, not
+  release or merge authorization.
+- **Stop and report:** provide verified branch/commit/check status and stop at
+  the approval gate whenever the next action has not been explicitly authorized.

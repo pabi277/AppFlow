@@ -3,7 +3,8 @@
 # Google Play release checklist
 
 Re-check live Play Console requirements before every submission. This list is
-not a guarantee of approval.
+not a guarantee of approval. A complete checklist or green CI is not permission
+to create a PR or submit a release; get explicit owner authorization for each.
 
 ## Build and policy
 
