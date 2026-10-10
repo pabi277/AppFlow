@@ -10,10 +10,11 @@ Do not paste secrets, account IDs, tester contacts, or real ad IDs into prompts.
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
 Before committing, verify author/committer identities with `git var` and
-inspect the resulting commit before pushing. Use only an owner-approved
-GitHub identity/noreply address or approved bot, never an agent's personal
-Gmail/account. If none is approved, stop and ask; do not rewrite pushed
-history to change attribution without separate permission.
+inspect the resulting commit before pushing. An email explicitly designated
+by the owner in chat is authorized as commit-author metadata; no per-commit
+ask. Use it only for the author; keep committer identity owner-approved.
+Never use an agent's personal email/account or copy personal addresses into
+tracked docs. The selected author email may be public in Git metadata.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -42,10 +43,11 @@ Do not write code. If evidence is insufficient, say what to inspect next.
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
 Before committing, verify author/committer identities with `git var` and
-inspect the resulting commit before pushing. Use only an owner-approved
-GitHub identity/noreply address or approved bot, never an agent's personal
-Gmail/account. If none is approved, stop and ask; do not rewrite pushed
-history to change attribution without separate permission.
+inspect the resulting commit before pushing. An email explicitly designated
+by the owner in chat is authorized as commit-author metadata; no per-commit
+ask. Use it only for the author; keep committer identity owner-approved.
+Never use an agent's personal email/account or copy personal addresses into
+tracked docs. The selected author email may be public in Git metadata.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -70,10 +72,11 @@ passed or failed; do not merge or publish without my approval.
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
 Before committing, verify author/committer identities with `git var` and
-inspect the resulting commit before pushing. Use only an owner-approved
-GitHub identity/noreply address or approved bot, never an agent's personal
-Gmail/account. If none is approved, stop and ask; do not rewrite pushed
-history to change attribution without separate permission.
+inspect the resulting commit before pushing. An email explicitly designated
+by the owner in chat is authorized as commit-author metadata; no per-commit
+ask. Use it only for the author; keep committer identity owner-approved.
+Never use an agent's personal email/account or copy personal addresses into
+tracked docs. The selected author email may be public in Git metadata.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -97,10 +100,11 @@ within four weeks. Do not add features outside the approved plan.
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
 Before committing, verify author/committer identities with `git var` and
-inspect the resulting commit before pushing. Use only an owner-approved
-GitHub identity/noreply address or approved bot, never an agent's personal
-Gmail/account. If none is approved, stop and ask; do not rewrite pushed
-history to change attribution without separate permission.
+inspect the resulting commit before pushing. An email explicitly designated
+by the owner in chat is authorized as commit-author metadata; no per-commit
+ask. Use it only for the author; keep committer identity owner-approved.
+Never use an agent's personal email/account or copy personal addresses into
+tracked docs. The selected author email may be public in Git metadata.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -125,10 +129,11 @@ blocked when Policy says no. Do not click live ads or submit a purchase.
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
 Before committing, verify author/committer identities with `git var` and
-inspect the resulting commit before pushing. Use only an owner-approved
-GitHub identity/noreply address or approved bot, never an agent's personal
-Gmail/account. If none is approved, stop and ask; do not rewrite pushed
-history to change attribution without separate permission.
+inspect the resulting commit before pushing. An email explicitly designated
+by the owner in chat is authorized as commit-author metadata; no per-commit
+ask. Use it only for the author; keep committer identity owner-approved.
+Never use an agent's personal email/account or copy personal addresses into
+tracked docs. The selected author email may be public in Git metadata.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -152,10 +157,11 @@ steps. Stop before submitting a production release.
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
 Before committing, verify author/committer identities with `git var` and
-inspect the resulting commit before pushing. Use only an owner-approved
-GitHub identity/noreply address or approved bot, never an agent's personal
-Gmail/account. If none is approved, stop and ask; do not rewrite pushed
-history to change attribution without separate permission.
+inspect the resulting commit before pushing. An email explicitly designated
+by the owner in chat is authorized as commit-author metadata; no per-commit
+ask. Use it only for the author; keep committer identity owner-approved.
+Never use an agent's personal email/account or copy personal addresses into
+tracked docs. The selected author email may be public in Git metadata.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -178,10 +184,11 @@ Do not upload assets or publish the listing.
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
 Before committing, verify author/committer identities with `git var` and
-inspect the resulting commit before pushing. Use only an owner-approved
-GitHub identity/noreply address or approved bot, never an agent's personal
-Gmail/account. If none is approved, stop and ask; do not rewrite pushed
-history to change attribution without separate permission.
+inspect the resulting commit before pushing. An email explicitly designated
+by the owner in chat is authorized as commit-author metadata; no per-commit
+ask. Use it only for the author; keep committer identity owner-approved.
+Never use an agent's personal email/account or copy personal addresses into
+tracked docs. The selected author email may be public in Git metadata.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -204,10 +211,11 @@ do not automate posting.
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
 Before committing, verify author/committer identities with `git var` and
-inspect the resulting commit before pushing. Use only an owner-approved
-GitHub identity/noreply address or approved bot, never an agent's personal
-Gmail/account. If none is approved, stop and ask; do not rewrite pushed
-history to change attribution without separate permission.
+inspect the resulting commit before pushing. An email explicitly designated
+by the owner in chat is authorized as commit-author metadata; no per-commit
+ask. Use it only for the author; keep committer identity owner-approved.
+Never use an agent's personal email/account or copy personal addresses into
+tracked docs. The selected author email may be public in Git metadata.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
