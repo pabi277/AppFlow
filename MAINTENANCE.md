@@ -4,9 +4,9 @@ Keep this playbook useful on a phone: short markdown, plain links, no build
 step, and no copied credentials or personal data. The owner-approval and
 commit-identity gates in `RULES.md` apply to maintenance too: a review, branch
 push, or green CI does not authorize a PR, merge, release, publication, or
-deployment. For commits, use an email explicitly designated by the owner as
-author metadata and an owner-approved committer identity; never use an agent's
-personal email.
+deployment. For AppFlow commits, use an author address listed in `RULES.md`
+and an owner-approved committer identity. Never reuse AppFlow's addresses in
+app templates or a new app repository.
 
 ## Quarterly playbook review
 

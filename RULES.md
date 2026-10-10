@@ -40,18 +40,20 @@ invariants are not imported into AppFlow.
   Commit and push only to the assigned branch when the requested work calls for
   it. Never use `git reset --hard`; protect existing work.
 - **Commit identity and attribution:** GitHub contributor attribution comes
-  from commit metadata, not simply the email used for push authentication.
-  Before committing, verify `git var GIT_AUTHOR_IDENT` and
-  `git var GIT_COMMITTER_IDENT`; inspect the resulting commit before pushing.
-  An email explicitly designated by the owner in chat is pre-authorized for
-  commit-author metadata; no per-commit approval is needed. Use a designated
-  address only as `GIT_AUTHOR_EMAIL`; keep committer metadata on the owner's
-  approved GitHub noreply/bot identity. Push through the connected GitHub auth, not an
-  email login. Never use an agent's personal Gmail or GitHub account. Do not
-  copy personal address values into tracked docs; the selected author address
-  can be public in commit metadata. If neither approved address is available,
-  stop; do not guess or substitute an agent identity. Do not rewrite already-
-  pushed history to alter attribution without separate permission.
+  from commit metadata, not simply push authentication. Before committing,
+  verify `git var GIT_AUTHOR_IDENT` and `git var GIT_COMMITTER_IDENT`; inspect
+  the resulting commit before pushing.
+  Owner-approved author addresses for this AppFlow repository:
+  - `chakraborttypabi2772006@gmail.com`
+  - `pabitra27.7.06@gmail.com`
+  Either is pre-authorized as `GIT_AUTHOR_EMAIL`; no per-commit approval is
+  needed. Keep `GIT_COMMITTER_EMAIL` on the owner's approved GitHub noreply or
+  bot identity. Push through the connected GitHub authentication; these email
+  addresses are not push credentials. Never use an agent's personal email or
+  GitHub account. Do not repeat these addresses in other tracked docs, templates,
+  or new app repositories. The selected author address is public in Git metadata.
+  Do not rewrite already-pushed history to alter attribution without separate
+  permission.
 - **PR approval:** do not create or open a pull request without the owner's
   explicit command in chat. Do not merge without a separate explicit command.
   Permission to edit, commit, push a branch, or obtain green CI is **not**

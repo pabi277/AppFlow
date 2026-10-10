@@ -25,9 +25,10 @@ and `knowledge/` before any app code exists.
   tester contact lists, and real AdMob IDs out of this playbook.
 - GitHub control is owner-gated: no PR, merge, `main` push, release, Play
   submission, or deployment without explicit permission in chat.
-- An email explicitly designated by the owner may be used only as commit-
-  author metadata; never use an agent's personal email/account or copy personal
-  addresses into tracked docs. Keep the committer identity owner-approved.
+- For this AppFlow repository, only author addresses listed in `RULES.md` are
+  pre-authorized. Never use an agent's personal email/account or copy these
+  addresses into app templates or new app repositories; keep committer identity
+  owner-approved.
 - The owner verifies facts, legal/tax choices, app content, and final releases.
 
 ## Money model

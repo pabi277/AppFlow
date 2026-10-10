@@ -9,12 +9,12 @@ submodule.
 - Use only the assigned working branch. Never create/switch branches, push to
   `main`, force-push, or discard work with `git reset --hard`.
 - Before committing, verify author/committer identities with `git var` and
-  inspect the resulting commit before pushing. An email explicitly designated
-  by the owner in chat is authorized as commit-author metadata; do not ask for
-  per-commit approval. Use it only as `GIT_AUTHOR_EMAIL`; keep committer identity
-  owner-approved. Never use an agent's personal email/account or copy personal
-  addresses into tracked docs. If no approved identity is available, stop; do
-  not rewrite pushed history without separate permission.
+  inspect the resulting commit before pushing. For AppFlow, an author address
+  listed in `RULES.md` is pre-authorized; no per-commit ask. Keep committer
+  identity owner-approved. Never use an agent's personal email/account or copy
+  AppFlow's addresses into a new app repo. For other repos, use only that
+  repository owner's designated address; if none is available, stop and ask.
+  Do not rewrite pushed history without separate permission.
 - Do not create/open a PR without the owner's explicit command in chat. Do not
   merge without separate explicit authorization. A request to code, a branch
   push, or green CI does not authorize a PR or merge.
