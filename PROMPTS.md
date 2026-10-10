@@ -9,6 +9,11 @@ Do not paste secrets, account IDs, tester contacts, or real ad IDs into prompts.
 ```text
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only an owner-approved
+GitHub identity/noreply address or approved bot, never an agent's personal
+Gmail/account. If none is approved, stop and ask; do not rewrite pushed
+history to change attribution without separate permission.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -36,6 +41,11 @@ Do not write code. If evidence is insufficient, say what to inspect next.
 ```text
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only an owner-approved
+GitHub identity/noreply address or approved bot, never an agent's personal
+Gmail/account. If none is approved, stop and ask; do not rewrite pushed
+history to change attribution without separate permission.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -59,6 +69,11 @@ passed or failed; do not merge or publish without my approval.
 ```text
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only an owner-approved
+GitHub identity/noreply address or approved bot, never an agent's personal
+Gmail/account. If none is approved, stop and ask; do not rewrite pushed
+history to change attribution without separate permission.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -81,6 +96,11 @@ within four weeks. Do not add features outside the approved plan.
 ```text
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only an owner-approved
+GitHub identity/noreply address or approved bot, never an agent's personal
+Gmail/account. If none is approved, stop and ask; do not rewrite pushed
+history to change attribution without separate permission.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -104,6 +124,11 @@ blocked when Policy says no. Do not click live ads or submit a purchase.
 ```text
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only an owner-approved
+GitHub identity/noreply address or approved bot, never an agent's personal
+Gmail/account. If none is approved, stop and ask; do not rewrite pushed
+history to change attribution without separate permission.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -126,6 +151,11 @@ steps. Stop before submitting a production release.
 ```text
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only an owner-approved
+GitHub identity/noreply address or approved bot, never an agent's personal
+Gmail/account. If none is approved, stop and ask; do not rewrite pushed
+history to change attribution without separate permission.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -147,6 +177,11 @@ Do not upload assets or publish the listing.
 ```text
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only an owner-approved
+GitHub identity/noreply address or approved bot, never an agent's personal
+Gmail/account. If none is approved, stop and ask; do not rewrite pushed
+history to change attribution without separate permission.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the
@@ -168,6 +203,11 @@ do not automate posting.
 ```text
 Change-control: use only the assigned session branch. Never create/switch
 to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only an owner-approved
+GitHub identity/noreply address or approved bot, never an agent's personal
+Gmail/account. If none is approved, stop and ask; do not rewrite pushed
+history to change attribution without separate permission.
 Do not create/open a PR without the owner's explicit command in chat; PR
 creation and merging are separate approvals. Work one task at a time; do
 not parallelize tasks or open a second PR while any PR is open. Check the

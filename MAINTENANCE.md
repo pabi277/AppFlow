@@ -1,9 +1,10 @@
 # Maintenance
 
 Keep this playbook useful on a phone: short markdown, plain links, no build
-step, and no copied credentials or personal data. The owner-approval gate in
-`RULES.md` applies to maintenance too: a review, branch push, or green CI does
-not authorize a PR, merge, release, publication, or deployment.
+step, and no copied credentials or personal data. The owner-approval and
+commit-identity gates in `RULES.md` apply to maintenance too: a review, branch
+push, or green CI does not authorize a PR, merge, release, publication, or
+deployment, and commits must use an owner-approved identity.
 
 ## Quarterly playbook review
 

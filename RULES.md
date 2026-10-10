@@ -39,6 +39,15 @@ invariants are not imported into AppFlow.
   create or switch to another branch, push to `main`, or use `git push --force`.
   Commit and push only to the assigned branch when the requested work calls for
   it. Never use `git reset --hard`; protect existing work.
+- **Commit identity and attribution:** GitHub contribution attribution comes
+  from commit metadata, not simply the email used for push authentication.
+  Before committing, verify `git var GIT_AUTHOR_IDENT` and
+  `git var GIT_COMMITTER_IDENT`; inspect the resulting commit before pushing.
+  Use only the owner's explicitly approved GitHub identity/address (prefer its
+  verified `users.noreply.github.com` address) or an owner-approved bot identity.
+  Never use an agent's personal Gmail or GitHub account. If no approved identity
+  is configured, stop and ask before committing or pushing. Do not rewrite
+  already-pushed history to alter attribution without separate permission.
 - **PR approval:** do not create or open a pull request without the owner's
   explicit command in chat. Do not merge without a separate explicit command.
   Permission to edit, commit, push a branch, or obtain green CI is **not**

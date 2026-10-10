@@ -8,6 +8,11 @@ submodule.
 
 - Use only the assigned working branch. Never create/switch branches, push to
   `main`, force-push, or discard work with `git reset --hard`.
+- Before committing, verify author/committer identities with `git var` and
+  inspect the resulting commit before pushing. Use only an owner-approved
+  GitHub identity/noreply address or approved bot; never an agent's personal
+  Gmail/account. If none is approved, stop and ask; do not rewrite pushed history
+  to change attribution without separate permission.
 - Do not create/open a PR without the owner's explicit command in chat. Do not
   merge without separate explicit authorization. A request to code, a branch
   push, or green CI does not authorize a PR or merge.

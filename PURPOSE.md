@@ -25,6 +25,8 @@ and `knowledge/` before any app code exists.
   tester contact lists, and real AdMob IDs out of this playbook.
 - GitHub control is owner-gated: no PR, merge, `main` push, release, Play
   submission, or deployment without explicit permission in chat.
+- Commit attribution must use an owner-approved GitHub identity or bot, never
+  an agent's personal Gmail/account; stop if none is configured.
 - The owner verifies facts, legal/tax choices, app content, and final releases.
 
 ## Money model
