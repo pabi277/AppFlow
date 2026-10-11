@@ -1,18 +1,25 @@
-# Start a new app repository
+# Start a new app
 
-**Law:** a new app repository takes data from the public playbook BEFORE any
-app code. Pin a full commit SHA. The copied files are a frozen snapshot, not a
-submodule.
+**Law:** stage 1 is a plan-only chat ([PLAN.md](PLAN.md)); nothing is created
+in it. Stage 2 creates the repository, and a new app repository takes data
+from the public playbook BEFORE any app code. Pin a full commit SHA. The
+copied files are a frozen snapshot, not a submodule.
 
-## 0. Research and select the app idea
+## Stage 1 — the plan chat (no repo, no code)
 
-Before creating an app repository, use `PROMPTS.md` P1 to research and present
-3–5 evidence-backed app options. Compare their user need, competition, owner
-advantage, four-week scope, and policy/privacy/monetization risks. The owner
-chooses, combines, or refines an option; stop before repo creation or app code
-until the owner explicitly selects a direction. After the Play title is
-confirmed, update the central `APP_LIST.md`; do not copy that portfolio list
-or AppFlow-specific identity details into the new app repository.
+One chat per app — paste [common-prompt.md](common-prompt.md) (the once-per-app
+launcher; `PROMPTS.md` P0 is its inline equivalent). It does all research
+(P1's work included), presents 3–5 evidence-backed options, asks the
+DECIDE-ONCE batch ([PLAN.md](PLAN.md) §3), drafts the complete self-contained
+file set (`rule.md`, `prompt.md`, `docs/`, README — `templates/` skeletons),
+and ends at the plan chat's exit gate ([PLAN.md](PLAN.md) §4): plan approval ·
+repo authorization · git author identity · working name + package ID. The
+owner chooses, combines, or refines an option — stage 2 does not start until
+that gate is answered.
+
+After the Play title is confirmed, update the central `APP_LIST.md`; do not
+copy that portfolio list or AppFlow-specific identity details into the new
+app repository.
 
 ## GitHub authority rule
 
@@ -34,7 +41,7 @@ or AppFlow-specific identity details into the new app repository.
 - Do not release, publish, deploy, or dispatch an expensive/destructive action
   without explicit permission. Stop at the approval gate.
 
-## 1. First message in the new session
+## Stage 2 — bootstrap: first message in the new session
 
 Paste this exact template as the first message, replacing only `<SHA>` with
 the full commit SHA you selected:
@@ -92,7 +99,21 @@ Bootstrapped from AppFlow @ <sha> on <date>
 Keep it when you later fill the app README. Keep the copied snapshot unchanged;
 update it only through a deliberate, documented refresh commit.
 
-## 3. Only after the snapshot commit
+## 2.5 Commit the plan docs + rule.md + prompt.md before any app code
+
+Create `docs/` from `templates/docs-system/` skeletons and fill it with the
+plan chat's deliverables: `RESEARCH.md`, `ROADMAP.md` (**phases** — 2–4 parts
+each, v1 ~5–8 phases, phase 0 = bootstrap), `DECISIONS.md` (every gate and
+decide-once answer already given, with dates). Create the repo root
+`rule.md` from `templates/rule-app.md` — the app's own self-contained rule
+book (laws, merge gate, question policy, invariants) — and `prompt.md` from
+`templates/prompt-app.md`, the continuation prompt that drives every later
+chat ([PLAN.md](PLAN.md) §6). Commit as `Plan docs` — before any app code,
+on the same session branch. From here the repo stands alone: `rule.md`
+governs questions (GATE items asked; everything else recorded; nothing
+recorded is re-asked), and AppFlow is provenance only.
+
+## 3. Only after the snapshot + plan-docs commits
 
 1. Fill `templates/readme-app.md` and use it as the app's `README.md`, keeping
    the provenance line.
@@ -101,8 +122,14 @@ update it only through a deliberate, documented refresh commit.
 3. Create the smallest Gradle skeleton and a hello screen.
 4. Copy `templates/ci-build.yml` to `.github/workflows/ci-build.yml`; wire the
    owner's signing secrets by name, never by committing secret values.
-5. Get CI green (unit tests and signed release artifacts).
-6. Write a short `DECISIONS` log, then implement app code under `RULES.md`.
+5. Get CI green (unit tests and signed release artifacts). Every push — every
+   phase — also uploads the downloadable `app-progress-apk` debug artifact, so
+   progress is visible after each phase ([PLAN.md](PLAN.md) §5).
+6. From here, run **one phase per chat** ([PLAN.md](PLAN.md) §5): paste the
+   repo's `prompt.md`, say `start phase N`, and each chat ends with the phase's
+   APK artifact, its `docs/phases/NN-<slug>.md` record, `prompt.md` updated,
+   and a stop at the merge gate. The repo's own `rule.md` is the manual —
+   no other repo is needed.
 
 ## 4. Pre-code checklist
 
@@ -114,6 +141,15 @@ outside Git.
 - [ ] testers-clock running? The 25-person opt-in plan and a dated start plan
       are ready. The Play 14-day clock starts only when a closed-test build is
       live and real testers opt in; never claim it started early.
+- [ ] Plan chat done? Exit gate answered (plan approved, repo authorized,
+      git author identity designated, working name + package ID chosen) before
+      this repository was created.
+- [ ] Plan docs committed before app code? `docs/RESEARCH.md`,
+      `docs/ROADMAP.md`, `docs/DECISIONS.md` are present and current.
+- [ ] `rule.md` present at the repo root (from `templates/rule-app.md`),
+      self-contained, with this app's identity and any law waivers filled in?
+- [ ] `prompt.md` present at the repo root (from `templates/prompt-app.md`),
+      self-contained, and updated at every phase end?
 - [ ] Evidence-backed app options were presented and the owner explicitly
       selected a direction before repo creation?
 - [ ] Niche verdict line written? Use `knowledge/niche-method.md`.

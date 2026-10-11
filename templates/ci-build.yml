@@ -1,6 +1,10 @@
 # SPDX-License-Identifier: MIT
 # Copy to .github/workflows/ci-build.yml in the app repository.
 # Assumes an Android app module named `app` and a Gradle wrapper at repo root.
+# Every push — every phase on any branch — runs tests and uploads a
+# downloadable debug APK artifact (`app-progress-apk`): the owner sideloads it
+# to SEE the phase's increment. It is progress, not a release. Signed release
+# artifacts build on main only.
 # Release signing config must read ANDROID_KEYSTORE_PATH plus the four secret
 # environment variables below in Gradle; fail release builds if they are absent.
 # Configure these GitHub Actions secrets; never commit their values:
@@ -10,7 +14,7 @@ name: Android CI
 
 on:
   push:
-    branches: [main]
+    branches: ["**"]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -24,7 +28,7 @@ concurrency:
 
 jobs:
   test:
-    name: Unit tests and debug build
+    name: Unit tests, debug build, progress APK
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
@@ -41,6 +45,13 @@ jobs:
         run: |
           chmod +x ./gradlew
           ./gradlew --no-daemon testDebugUnitTest assembleDebug
+      - name: Upload progress APK (the downloadable result of this phase)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-progress-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 30
 
   signed-release:
     name: Signed release AAB and APK

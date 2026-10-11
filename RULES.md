@@ -40,6 +40,21 @@ multiple ad-driven or paid mechanics.
   include package ID, listing URL, status, and verification date. Never invent
   an official title or put working-name guesses in the official-name field.
 
+## Questions: ask less, gate always
+
+Full policy: [PLAN.md](PLAN.md) §3. Three classes:
+
+- **GATE — always ask, never act without an explicit yes:** repo creation,
+  app name + package ID, git author identity, license if unfixed, PR / merge /
+  `main` push / release / publish / deploy / Play submission, money, legal or
+  tax actions, waiving a law above, changing a recorded decision. One Summary
+  batch per gate moment, ≤4 questions.
+- **DECIDE-ONCE — ask once in the plan chat, record in `DECISIONS.md`:**
+  product-shaping choices (languages, monetization, scope, time budget).
+  Re-asking a recorded answer is a defect.
+- **DEFAULT — never ask:** researchable facts (research and cite), reversible
+  choices (decide and log under Agent decisions), anything already answered.
+
 ## GitHub authority and approval gate
 
 These process rules supplement the 14 laws above; they do not change their
