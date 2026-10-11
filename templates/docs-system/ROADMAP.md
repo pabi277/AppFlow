@@ -4,7 +4,7 @@
 
 Bootstrapped from AppFlow @ <sha> on <date>
 
-> One phase = one chat (PLAN.md §5). A phase is a decent chunk: one whole
+> One phase = one chat (`rule.md` §4). A phase is a decent chunk: one whole
 > capability, 2–4 parts listed in its `docs/phases/NN-<slug>.md` record.
 > v1 should be ~5–8 phases — if this table passes ~10 rows, phases are too
 > small; merge them. Status: 📋 planned · 🚧 in progress · ✅ done · ❌

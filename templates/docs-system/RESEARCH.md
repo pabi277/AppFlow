@@ -3,7 +3,7 @@
 # Research — [APP]
 
 > Evidence-backed. Every claim links its source and its check date. Rejected
-> options stay listed so nobody re-litigates them. (Playbook: PLAN.md §2.)
+> options stay listed so nobody re-litigates them. (Rules: `rule.md` in this repo.)
 
 ## Niche verdict line
 
@@ -27,7 +27,7 @@ not fill this without the owner.]
 
 ## Kill test (pre-written, before results)
 
-[Measurable criteria to ship-next-or-iterate, per RULES.md law 4. Write it now,
+[Measurable criteria to ship-next-or-iterate, per `rule.md` (kill fast). Write it now,
 not after seeing numbers.]
 
 ## Sources checked

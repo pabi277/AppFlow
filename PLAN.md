@@ -19,20 +19,24 @@
 - Phases run in order. A new phase starts only when the previous phase is
   recorded done (or explicitly held by the owner).
 
-## 2. The app docs system
+## 2. The app docs system — the self-contained set
 
-Five files, drafted in the plan chat, committed to the app repo **before any
-app code**, kept forever. Skeletons live in `templates/docs-system/` (plus
-`templates/prompt-app.md`) and are frozen into the repo at bootstrap. Modeled
-on CodeC's `docs/` + `prompt.md`, scaled down:
+These files, drafted in the plan chat and committed to the app repo **before
+any app code**, make the repo workable **without any other repo**. Skeletons
+live in `templates/` (`docs-system/`, `rule-app.md`, `prompt-app.md`,
+`readme-app.md`) and are frozen into the repo at bootstrap:
 
 | File | Holds |
 |---|---|
+| `README.md` | what the app is (from `templates/readme-app.md`, provenance line kept) |
+| `rule.md` (repo root) | **the app's own operating manual** — laws, merge gate, question policy, work cycle, invariants, definition of done. Self-contained: authoritative even if AppFlow is unreachable (`templates/rule-app.md`) |
+| `prompt.md` (repo root) | the **self-contained continuation prompt** — paste it into the next chat; updated at every phase end (§6, `templates/prompt-app.md`) |
 | `docs/RESEARCH.md` | 3–5 evidence-backed options (links + check dates), the niche verdict line, **rejected options with reasons**, the pre-written kill test |
 | `docs/ROADMAP.md` | numbered **phases** in execution order; one phase = one chat; status 📋 planned · 🚧 in progress · ✅ done · ❌ cancelled (keep the row) |
 | `docs/DECISIONS.md` | the dated decision log — **the anti-re-ask register**: owner decisions, law waivers, agent decisions |
 | `docs/phases/NN-<slug>.md` | one record per phase: its parts, evidence (`file:line`), what shipped, tests, **what the APK shows** |
-| `prompt.md` (repo root) | the **self-contained continuation prompt** — paste it into the next chat; updated at every phase end (§6) |
+
+That is the whole set — nothing else is needed from anywhere.
 
 ### Phase sizing (decent chunks, not slivers)
 
@@ -140,16 +144,16 @@ Each phase chat ends with **all** of:
 5. a short report (run id, tip sha, APK artifact name, what is now visible),
    and a stop at the merge gate.
 
-## 6. Frozen playbook, living app
+## 6. Frozen playbook, self-contained app
 
-- **AppFlow is frozen reference.** An app pins one full SHA at bootstrap; its
-  copied `templates/` + `knowledge/` snapshot is never edited in the app repo.
-  App work never waits on an AppFlow change — AppFlow itself changes only by
-  deliberate owner review ([MAINTENANCE](MAINTENANCE.md)).
-- **The app's own `prompt.md` is the living driver** (skeleton:
-  `templates/prompt-app.md`). It is self-contained: identity, rules digest,
-  decisions digest, current phase state, and the exact continuation
-  instruction. The owner pastes it into the next chat and says `start phase N`
-  — or reports a bug.
-- Because `prompt.md` is self-contained, a later chat works from it alone if
-  AppFlow is unreachable; the pinned SHA stays cited for the full texts.
+- **The app repo depends on nothing.** Its `rule.md` holds the full laws
+  (branching, merge gate, question policy, work cycle, invariants), its
+  `prompt.md` the living state and continuation instruction, its `docs/` the
+  plan and decisions. A later chat works from this repo alone.
+- **AppFlow is frozen reference and provenance.** An app pins one full SHA at
+  bootstrap; its copied `templates/` + `knowledge/` snapshot is never edited
+  in the app repo. App work never waits on an AppFlow change — AppFlow itself
+  changes only by deliberate owner review ([MAINTENANCE](MAINTENANCE.md)).
+- The owner pastes `prompt.md` into the next chat and says `start phase N`
+  — or reports a bug. The pinned playbook SHA stays in the provenance line
+  and `rule.md` header for history, not for reading.

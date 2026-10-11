@@ -97,17 +97,19 @@ Bootstrapped from AppFlow @ <sha> on <date>
 Keep it when you later fill the app README. Keep the copied snapshot unchanged;
 update it only through a deliberate, documented refresh commit.
 
-## 2.5 Commit the plan docs + prompt.md before any app code
+## 2.5 Commit the plan docs + rule.md + prompt.md before any app code
 
 Create `docs/` from `templates/docs-system/` skeletons and fill it with the
 plan chat's deliverables: `RESEARCH.md`, `ROADMAP.md` (**phases** — 2–4 parts
 each, v1 ~5–8 phases, phase 0 = bootstrap), `DECISIONS.md` (every gate and
 decide-once answer already given, with dates). Create the repo root
-`prompt.md` from `templates/prompt-app.md` — the self-contained continuation
-prompt that drives every later chat ([PLAN.md](PLAN.md) §6). Commit as `Plan
-docs` — before any app code, on the same session branch. From here on,
-[PLAN.md](PLAN.md) §3 governs questions: GATE items are asked, everything
-else is recorded, nothing recorded is re-asked.
+`rule.md` from `templates/rule-app.md` — the app's own self-contained rule
+book (laws, merge gate, question policy, invariants) — and `prompt.md` from
+`templates/prompt-app.md`, the continuation prompt that drives every later
+chat ([PLAN.md](PLAN.md) §6). Commit as `Plan docs` — before any app code,
+on the same session branch. From here the repo stands alone: `rule.md`
+governs questions (GATE items asked; everything else recorded; nothing
+recorded is re-asked), and AppFlow is provenance only.
 
 ## 3. Only after the snapshot + plan-docs commits
 
@@ -124,7 +126,8 @@ else is recorded, nothing recorded is re-asked.
 6. From here, run **one phase per chat** ([PLAN.md](PLAN.md) §5): paste the
    repo's `prompt.md`, say `start phase N`, and each chat ends with the phase's
    APK artifact, its `docs/phases/NN-<slug>.md` record, `prompt.md` updated,
-   and a stop at the merge gate.
+   and a stop at the merge gate. The repo's own `rule.md` is the manual —
+   no other repo is needed.
 
 ## 4. Pre-code checklist
 
@@ -141,6 +144,8 @@ outside Git.
       this repository was created.
 - [ ] Plan docs committed before app code? `docs/RESEARCH.md`,
       `docs/ROADMAP.md`, `docs/DECISIONS.md` are present and current.
+- [ ] `rule.md` present at the repo root (from `templates/rule-app.md`),
+      self-contained, with this app's identity and any law waivers filled in?
 - [ ] `prompt.md` present at the repo root (from `templates/prompt-app.md`),
       self-contained, and updated at every phase end?
 - [ ] Evidence-backed app options were presented and the owner explicitly

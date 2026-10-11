@@ -3,7 +3,7 @@
 # Phase <NN> — <slug>
 
 - Status: ✅ / 🚧 / ❌ · Date: YYYY-MM-DD · Branch: <session-branch>
-- CI: run <id> green (or: blocked at <step>) · Playbook: AppFlow @ <sha>
+- CI: run <id> green (or: blocked at <step>) · Provenance: AppFlow @ <sha> (reference only)
 - **APK:** artifact `app-progress-apk` from run <id> — *shows: [what the
   owner can see after sideloading it]*
 

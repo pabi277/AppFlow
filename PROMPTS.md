@@ -43,10 +43,12 @@ docs/RESEARCH.md, docs/ROADMAP.md (numbered **phases**, not slivers — one
 phase = one chat = one downloadable APK; 2–4 parts per phase; v1 is ~5–8
 phases; if a row is smaller than half a day of work, merge it into a
 neighbour), docs/DECISIONS.md (every answer so far, dated; law waivers in
-their own section), templates/readme-app.md filled, and the app's own
-self-contained prompt.md from templates/prompt-app.md (identity + rules
-digest + state + continuation). Sketch screens and the asset/data schema
-inside phase records — never as code.
+their own section), the repo's own self-contained rule.md from
+templates/rule-app.md (identity, time budget, any waivers filled in),
+templates/readme-app.md filled, and the app's own self-contained prompt.md
+from templates/prompt-app.md (identity + rules digest + state + continuation).
+The finished app repo must work with no other repo reachable. Sketch screens
+and the asset/data schema inside phase records — never as code.
 4. Batch (B), the exit Summary and nothing else (PLAN.md §4): plan
 approve/revise/hold · authorize repo creation (public/private, MIT/GPL-3.0) ·
 git author identity · working name + package ID. Then stop. No repo and no
@@ -320,10 +322,12 @@ current git/PR/CI state and do not duplicate an existing run.
 Do not merge, release, publish, deploy, or dispatch an expensive/destructive
 workflow without explicit authorization for that action. A code request,
 branch push, or green CI is not authorization; stop at the approval gate.
-Continue the [APP] plan. Read docs/ROADMAP.md and docs/DECISIONS.md before
-asking or deciding anything: never re-ask a recorded answer (that is a
-defect, not caution), and ask GATE items only per PLAN.md §3 — each gate gets
-its own explicit ask, one Summary batch. Implement **phase [N] only** — all
+Continue the [APP] plan. This repo is self-contained: obey its own rule.md
+(laws, merge gate, question policy, work cycle) and read docs/ROADMAP.md and
+docs/DECISIONS.md before asking or deciding anything: never re-ask a recorded
+answer (that is a defect, not caution), and ask GATE items only per rule.md
+§3 — each gate gets its own explicit ask, one Summary batch. Implement
+**phase [N] only** — all
 its 2–4 parts, no feature outside this phase; its "Done means" cell is the
 acceptance test. Evidence before hypothesis: cite file:line reads against the
 current tree. Update docs with the code: set the phase's status in

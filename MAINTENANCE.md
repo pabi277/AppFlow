@@ -15,8 +15,9 @@ app templates or a new app repository.
 - Re-check links, target API policy, testing gates, store asset rules, ad SDK
   lifecycle, tax/payment notes, and GitHub Actions examples.
 - Confirm the frozen-reference model: app repos never edit their
-  `templates/`/`knowledge/` snapshot; each app's living state is its own
-  `prompt.md` + `docs/`; this playbook changes only here, deliberately.
+  `templates/`/`knowledge/` snapshot; each app is self-contained with its own
+  `rule.md` + `prompt.md` + `docs/`; this playbook changes only here,
+  deliberately.
 - Search for changed Google Play and AdMob requirements; update dated claims
   and their sources, not just wording.
 - Verify every internal link and confirm the required files still exist.
