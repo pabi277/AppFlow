@@ -1,9 +1,17 @@
 <!-- SPDX-License-Identifier: MIT -->
 
-# Step <NN> — <slug>
+# Phase <NN> — <slug>
 
 - Status: ✅ / 🚧 / ❌ · Date: YYYY-MM-DD · Branch: <session-branch>
 - CI: run <id> green (or: blocked at <step>) · Playbook: AppFlow @ <sha>
+- **APK:** artifact `app-progress-apk` from run <id> — *shows: [what the
+  owner can see after sideloading it]*
+
+## Parts
+
+- <NN>.1 — [part] — [status]
+- <NN>.2 — [part] — [status]
+- <NN>.3 — [part] — [status]
 
 ## Evidence (before the change)
 
@@ -22,4 +30,4 @@ guessed.]
 
 ## Follow-ups
 
-- [New roadmap rows? New decision to log in DECISIONS.md? Nothing?]
+- [New roadmap phases? New decision to log in DECISIONS.md? Nothing?]

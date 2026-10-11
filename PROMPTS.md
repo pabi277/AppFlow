@@ -39,11 +39,14 @@ choose for me. Batch (A), one Summary, ≤4 questions: my pick of direction
 monetization model, scope cuts, time budget — a budget beyond four weeks is a
 RULES.md law-3 waiver and is recorded as such).
 3. After my pick, write the plan deliverables as copyable markdown blocks:
-docs/RESEARCH.md, docs/ROADMAP.md (numbered rows including row 0 bootstrap;
-one row = one future chat of execution), docs/DECISIONS.md (every answer so
-far, dated; law waivers in their own section), and templates/readme-app.md
-filled. Sketch screens and the asset/data schema inside roadmap rows — never
-as code.
+docs/RESEARCH.md, docs/ROADMAP.md (numbered **phases**, not slivers — one
+phase = one chat = one downloadable APK; 2–4 parts per phase; v1 is ~5–8
+phases; if a row is smaller than half a day of work, merge it into a
+neighbour), docs/DECISIONS.md (every answer so far, dated; law waivers in
+their own section), templates/readme-app.md filled, and the app's own
+self-contained prompt.md from templates/prompt-app.md (identity + rules
+digest + state + continuation). Sketch screens and the asset/data schema
+inside phase records — never as code.
 4. Batch (B), the exit Summary and nothing else (PLAN.md §4): plan
 approve/revise/hold · authorize repo creation (public/private, MIT/GPL-3.0) ·
 git author identity · working name + package ID. Then stop. No repo and no
@@ -298,7 +301,7 @@ polishing. Cite the decision rule and state what evidence would change it.
 [PASTE AGGREGATED NUMBERS ONLY — NO USER-LEVEL DATA]
 ```
 
-## P9 — execute one roadmap step
+## P9 — run one phase (ends with a downloadable APK)
 
 ```text
 Change-control: use only the assigned session branch. Never create/switch
@@ -320,13 +323,17 @@ branch push, or green CI is not authorization; stop at the approval gate.
 Continue the [APP] plan. Read docs/ROADMAP.md and docs/DECISIONS.md before
 asking or deciding anything: never re-ask a recorded answer (that is a
 defect, not caution), and ask GATE items only per PLAN.md §3 — each gate gets
-its own explicit ask, one Summary batch. Implement roadmap step [N] only; its
-"Done means" cell is the acceptance test, and no feature outside this row may
-be added. Evidence before hypothesis: cite file:line reads against the
-current tree. Update docs with the code: set the row's status in ROADMAP.md,
-write docs/steps/NN-<slug>.md from templates/docs-system/STEP_RECORD.md, and
-log any new decision in DECISIONS.md (my answers under Owner decisions; your
-reversible calls under Agent decisions, marked reversible on objection).
-Commit and push the session branch, get CI green, then report the run id, tip
-sha, and what changed — and stop at the merge gate.
+its own explicit ask, one Summary batch. Implement **phase [N] only** — all
+its 2–4 parts, no feature outside this phase; its "Done means" cell is the
+acceptance test. Evidence before hypothesis: cite file:line reads against the
+current tree. Update docs with the code: set the phase's status in
+ROADMAP.md, write docs/phases/NN-<slug>.md from
+templates/docs-system/PHASE_RECORD.md (including what the APK shows), log any
+new decision in DECISIONS.md (my answers under Owner decisions; your
+reversible calls under Agent decisions, marked reversible on objection), and
+update the repo's prompt.md (templates/prompt-app.md) in the same commit.
+Commit and push the session branch, get CI green, and confirm the run's
+app-progress-apk artifact is uploaded (I must be able to download and sideload
+it to see this phase's progress). Then report the run id, tip sha, APK
+artifact name, and what is now visible — and stop at the merge gate.
 ```

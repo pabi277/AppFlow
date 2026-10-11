@@ -1,34 +1,49 @@
-# Plan first — one plan chat, then one step per chat
+# Plan first — one plan chat, then one phase per chat
 
 > The 1st chat is **plan only**: all research, the selection, and the plan docs
 > — like CodeC's `docs/` system, scaled to a small app. Nothing is created in
-> it. Execution starts only after the plan gate, and it runs **one roadmap row
-> per chat**. Question rule everywhere: **ask less, gate always** (§3).
+> it. Execution starts only after the plan gate, and it runs **one phase per
+> chat** — a phase is a decent chunk of work (2–4 parts), not a sliver, so v1
+> finishes in a handful of chats. **Every phase ends with a downloadable APK**
+> so progress is visible. Question rule everywhere: **ask less, gate always**
+> (§3). AppFlow is frozen reference; the app lives by its own `prompt.md` (§6).
 
 ## 1. The two-stage law
 
 | Stage | Chats | Creates | Ends with |
 |---|---|---|---|
 | **1 · PLAN** | exactly one (P0) | research + the plan docs as chat deliverables | one exit Summary gate (§4), then stop |
-| **2 · EXECUTE** | one per roadmap row | the app repo (row 0), then app code row by row | CI green + docs updated + report; merge gate in [RULES](RULES.md) |
+| **2 · EXECUTE** | one per phase | the app repo (phase 0), then one working increment per chat | CI green + **downloadable APK artifact** + docs updated + report; merge gate in [RULES](RULES.md) |
 
 - No repository, no app code, no Play/account action in the plan chat.
-- Rows run in order. A new row starts only when the previous row is recorded
-  done (or explicitly held by the owner).
+- Phases run in order. A new phase starts only when the previous phase is
+  recorded done (or explicitly held by the owner).
 
 ## 2. The app docs system
 
-Four files, drafted in the plan chat, committed to the app repo **before any
-app code**, kept forever. Skeletons live in `templates/docs-system/` and are
-frozen into the repo at bootstrap. Modeled on CodeC's `docs/` (research ·
-roadmap · journal · phase records), scaled down:
+Five files, drafted in the plan chat, committed to the app repo **before any
+app code**, kept forever. Skeletons live in `templates/docs-system/` (plus
+`templates/prompt-app.md`) and are frozen into the repo at bootstrap. Modeled
+on CodeC's `docs/` + `prompt.md`, scaled down:
 
 | File | Holds |
 |---|---|
 | `docs/RESEARCH.md` | 3–5 evidence-backed options (links + check dates), the niche verdict line, **rejected options with reasons**, the pre-written kill test |
-| `docs/ROADMAP.md` | numbered rows in execution order; one row = one chat; status 📋 planned · 🚧 in progress · ✅ done · ❌ cancelled (keep the row) |
+| `docs/ROADMAP.md` | numbered **phases** in execution order; one phase = one chat; status 📋 planned · 🚧 in progress · ✅ done · ❌ cancelled (keep the row) |
 | `docs/DECISIONS.md` | the dated decision log — **the anti-re-ask register**: owner decisions, law waivers, agent decisions |
-| `docs/steps/NN-<slug>.md` | one record per executed row: evidence (`file:line`), what shipped, tests, follow-ups |
+| `docs/phases/NN-<slug>.md` | one record per phase: its parts, evidence (`file:line`), what shipped, tests, **what the APK shows** |
+| `prompt.md` (repo root) | the **self-contained continuation prompt** — paste it into the next chat; updated at every phase end (§6) |
+
+### Phase sizing (decent chunks, not slivers)
+
+- A phase is **one whole capability** of the app (e.g. "editor with file CRUD",
+  "terminal UX", "ads + ad-free purchase"), split into **2–4 parts** listed in
+  its phase record. Each part is verifiable; the phase lands as one increment.
+- A v1 roadmap is roughly **5–8 phases** including bootstrap. If a roadmap
+  grows past ~10 phases, the phases are too small — merge them.
+- Anything smaller than about half a day of work joins a neighboring phase.
+  Split a phase only when it genuinely cannot land in one chat, and record why.
+- Bugs reported later are their own small fix chats — they don't need phases.
 
 Borrowed from CodeC's culture, kept light:
 
@@ -105,17 +120,36 @@ locales, monetization model, scope cuts, time budget, design direction.
 The DECIDE-ONCE batch is asked earlier in the same chat — not at this gate.
 Then stop. No repo, no code until the owner answers this gate.
 
-## 5. Execution chats (one row per chat)
+## 5. Phase chats (one phase per chat, APK every time)
 
-First message of every execution chat:
+First message of every phase chat is the app's own **`prompt.md`**, pasted as
+it stands (§6) — it already carries the rules digest and the state — followed
+by the owner's command, e.g. `start phase 3`.
 
-```text
-Read the public playbook repo https://github.com/pabi277/AppFlow at commit <SHA>
-and follow START.md stage 2. Implement roadmap step <N> only for <APP>.
-Read docs/ROADMAP.md and docs/DECISIONS.md first; never re-ask a recorded
-decision; GATE items only per PLAN.md §3.
-```
+Each phase chat ends with **all** of:
 
-Each chat ends: the row's status updated in `ROADMAP.md`, its
-`docs/steps/NN-<slug>.md` record written, CI green, a short report, and a stop
-at the merge gate.
+1. every part of the phase implemented; its "Done means" cell in `ROADMAP.md`
+   is the acceptance test, and no feature outside this phase may be added;
+2. CI green, and the run's **`app-progress-apk` artifact downloadable** — the
+   owner can sideload it and see this phase's increment (it is progress, not a
+   release);
+3. `docs/phases/NN-<slug>.md` written (including a line on **what the APK
+   shows**), the roadmap row's status updated;
+4. `prompt.md` updated in the same commit (state, CI run, APK note, next
+   phase);
+5. a short report (run id, tip sha, APK artifact name, what is now visible),
+   and a stop at the merge gate.
+
+## 6. Frozen playbook, living app
+
+- **AppFlow is frozen reference.** An app pins one full SHA at bootstrap; its
+  copied `templates/` + `knowledge/` snapshot is never edited in the app repo.
+  App work never waits on an AppFlow change — AppFlow itself changes only by
+  deliberate owner review ([MAINTENANCE](MAINTENANCE.md)).
+- **The app's own `prompt.md` is the living driver** (skeleton:
+  `templates/prompt-app.md`). It is self-contained: identity, rules digest,
+  decisions digest, current phase state, and the exact continuation
+  instruction. The owner pastes it into the next chat and says `start phase N`
+  — or reports a bug.
+- Because `prompt.md` is self-contained, a later chat works from it alone if
+  AppFlow is unreachable; the pinned SHA stays cited for the full texts.

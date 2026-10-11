@@ -4,20 +4,23 @@
 
 Bootstrapped from AppFlow @ <sha> on <date>
 
-> One row = one chat of execution (PLAN.md §5). Work the rows in order.
-> Status: 📋 planned · 🚧 in progress · ✅ done · ❌ cancelled (keep the row).
-> "Done means" is the row's only acceptance test.
+> One phase = one chat (PLAN.md §5). A phase is a decent chunk: one whole
+> capability, 2–4 parts listed in its `docs/phases/NN-<slug>.md` record.
+> v1 should be ~5–8 phases — if this table passes ~10 rows, phases are too
+> small; merge them. Status: 📋 planned · 🚧 in progress · ✅ done · ❌
+> cancelled (keep the row). "Done means" always includes a green CI run whose
+> **`app-progress-apk` artifact installs and shows the phase's increment**.
 
-| # | Step | Done means | Status |
+| # | Phase (2–4 parts) | Done means | Status |
 |---|---|---|---|
-| 0 | Bootstrap repo (P2) | playbook snapshot + plan docs + LICENSE + README + CI green | 📋 |
-| 1 | Hello screen (P3) | smallest Gradle skeleton, one screen, a unit test, CI green | 📋 |
-| 2 | [core v1 feature] | [observable behavior] | 📋 |
-| 3 | [core v1 feature] | [observable behavior] | 📋 |
-| 4 | Ads wiring (P4), only if approved | test-ID ads behind Policy, consent, ad-free IAP + restore | 📋 |
-| 5 | Store listing draft (P6) | factual listing text + shot list, owner-verified | 📋 |
+| 0 | Bootstrap + hello (P2/P3) | snapshot + plan docs + LICENSE + README + CI green; APK opens on the hello screen | 📋 |
+| 1 | [core capability A] | [observable behavior]; APK shows [what] | 📋 |
+| 2 | [core capability B] | [observable behavior]; APK shows [what] | 📋 |
+| 3 | [core capability C] | [observable behavior]; APK shows [what] | 📋 |
+| 4 | Ads + ad-free purchase (P4), only if approved | test-ID ads behind Policy, consent, IAP + restore; APK shows the flow | 📋 |
+| 5 | Polish + store listing draft (P6) | [polish items]; listing text + shot list, owner-verified | 📋 |
 | 6 | Release prep (P5) | signed artifact, checklist green, stopped before submit | 📋 |
 
 ## Held / cancelled (keep visible)
 
-- [row] — ❌ [why, date]
+- [phase] — ❌ [why, date]
