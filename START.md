@@ -7,13 +7,15 @@ copied files are a frozen snapshot, not a submodule.
 
 ## Stage 1 — the plan chat (no repo, no code)
 
-One chat, `PROMPTS.md` **P0**. It does all research (P1's work included),
-presents 3–5 evidence-backed options, asks the DECIDE-ONCE batch
-([PLAN.md](PLAN.md) §3), drafts the four `docs/` plan files
-(`templates/docs-system/` skeletons), and ends at the plan chat's exit gate
-([PLAN.md](PLAN.md) §4): plan approval · repo authorization · git author
-identity · working name + package ID. The owner chooses, combines, or refines
-an option — stage 2 does not start until that gate is answered.
+One chat per app — paste [common-prompt.md](common-prompt.md) (the once-per-app
+launcher; `PROMPTS.md` P0 is its inline equivalent). It does all research
+(P1's work included), presents 3–5 evidence-backed options, asks the
+DECIDE-ONCE batch ([PLAN.md](PLAN.md) §3), drafts the complete self-contained
+file set (`rule.md`, `prompt.md`, `docs/`, README — `templates/` skeletons),
+and ends at the plan chat's exit gate ([PLAN.md](PLAN.md) §4): plan approval ·
+repo authorization · git author identity · working name + package ID. The
+owner chooses, combines, or refines an option — stage 2 does not start until
+that gate is answered.
 
 After the Play title is confirmed, update the central `APP_LIST.md`; do not
 copy that portfolio list or AppFlow-specific identity details into the new
