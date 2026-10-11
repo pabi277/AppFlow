@@ -1,18 +1,23 @@
-# Start a new app repository
+# Start a new app
 
-**Law:** a new app repository takes data from the public playbook BEFORE any
-app code. Pin a full commit SHA. The copied files are a frozen snapshot, not a
-submodule.
+**Law:** stage 1 is a plan-only chat ([PLAN.md](PLAN.md)); nothing is created
+in it. Stage 2 creates the repository, and a new app repository takes data
+from the public playbook BEFORE any app code. Pin a full commit SHA. The
+copied files are a frozen snapshot, not a submodule.
 
-## 0. Research and select the app idea
+## Stage 1 — the plan chat (no repo, no code)
 
-Before creating an app repository, use `PROMPTS.md` P1 to research and present
-3–5 evidence-backed app options. Compare their user need, competition, owner
-advantage, four-week scope, and policy/privacy/monetization risks. The owner
-chooses, combines, or refines an option; stop before repo creation or app code
-until the owner explicitly selects a direction. After the Play title is
-confirmed, update the central `APP_LIST.md`; do not copy that portfolio list
-or AppFlow-specific identity details into the new app repository.
+One chat, `PROMPTS.md` **P0**. It does all research (P1's work included),
+presents 3–5 evidence-backed options, asks the DECIDE-ONCE batch
+([PLAN.md](PLAN.md) §3), drafts the four `docs/` plan files
+(`templates/docs-system/` skeletons), and ends at the plan chat's exit gate
+([PLAN.md](PLAN.md) §4): plan approval · repo authorization · git author
+identity · working name + package ID. The owner chooses, combines, or refines
+an option — stage 2 does not start until that gate is answered.
+
+After the Play title is confirmed, update the central `APP_LIST.md`; do not
+copy that portfolio list or AppFlow-specific identity details into the new
+app repository.
 
 ## GitHub authority rule
 
@@ -34,7 +39,7 @@ or AppFlow-specific identity details into the new app repository.
 - Do not release, publish, deploy, or dispatch an expensive/destructive action
   without explicit permission. Stop at the approval gate.
 
-## 1. First message in the new session
+## Stage 2 — bootstrap: first message in the new session
 
 Paste this exact template as the first message, replacing only `<SHA>` with
 the full commit SHA you selected:
@@ -92,7 +97,16 @@ Bootstrapped from AppFlow @ <sha> on <date>
 Keep it when you later fill the app README. Keep the copied snapshot unchanged;
 update it only through a deliberate, documented refresh commit.
 
-## 3. Only after the snapshot commit
+## 2.5 Commit the plan docs before any app code
+
+Create `docs/` from `templates/docs-system/` skeletons and fill it with the
+plan chat's deliverables: `RESEARCH.md`, `ROADMAP.md` (rows including row 0
+bootstrap), `DECISIONS.md` (every gate and decide-once answer already given,
+with dates). Commit as `Plan docs` — before any app code, on the same session
+branch. From here on, [PLAN.md](PLAN.md) §3 governs questions: GATE items are
+asked, everything else is recorded, nothing recorded is re-asked.
+
+## 3. Only after the snapshot + plan-docs commits
 
 1. Fill `templates/readme-app.md` and use it as the app's `README.md`, keeping
    the provenance line.
@@ -102,7 +116,8 @@ update it only through a deliberate, documented refresh commit.
 4. Copy `templates/ci-build.yml` to `.github/workflows/ci-build.yml`; wire the
    owner's signing secrets by name, never by committing secret values.
 5. Get CI green (unit tests and signed release artifacts).
-6. Write a short `DECISIONS` log, then implement app code under `RULES.md`.
+6. From here, run **one `ROADMAP.md` row per chat** ([PLAN.md](PLAN.md) §5),
+   each row recorded in `docs/steps/NN-<slug>.md`.
 
 ## 4. Pre-code checklist
 
@@ -114,6 +129,11 @@ outside Git.
 - [ ] testers-clock running? The 25-person opt-in plan and a dated start plan
       are ready. The Play 14-day clock starts only when a closed-test build is
       live and real testers opt in; never claim it started early.
+- [ ] Plan chat done? Exit gate answered (plan approved, repo authorized,
+      git author identity designated, working name + package ID chosen) before
+      this repository was created.
+- [ ] Plan docs committed before app code? `docs/RESEARCH.md`,
+      `docs/ROADMAP.md`, `docs/DECISIONS.md` are present and current.
 - [ ] Evidence-backed app options were presented and the owner explicitly
       selected a direction before repo creation?
 - [ ] Niche verdict line written? Use `knowledge/niche-method.md`.

@@ -21,6 +21,8 @@ app templates or a new app repository.
   URLs, statuses, and verification dates must be exact and current.
 - Read `RULES.md` for contradictions and keep each law unchanged unless the
   owner deliberately decides otherwise.
+- Re-read `PLAN.md` §3: GATE items must still be asked; nothing recorded in a
+  `DECISIONS.md` may be re-asked; keep the class lists accurate.
 - Record a new full commit SHA for future app bootstraps. Existing app repos
   stay pinned to their frozen snapshot until explicitly refreshed.
 

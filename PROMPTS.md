@@ -3,6 +3,52 @@
 Replace bracketed fields before sending. Each prompt assumes the app repo has
 already frozen `templates/` and `knowledge/` from a pinned playbook commit.
 Do not paste secrets, account IDs, tester contacts, or real ad IDs into prompts.
+Every prompt also assumes the question policy in [PLAN.md](PLAN.md) §3: **ask
+less, gate always** — read `docs/DECISIONS.md` before asking anything, GATE
+items are asked (one Summary batch), everything else is researched, defaulted,
+or recorded once and never re-asked.
+
+## P0 — plan-only first chat (research + plan docs)
+
+```text
+Plan-only session (PLAN.md stage 1): do NOT create any repository, branch,
+commit, or app code. Follow AppFlow's PLAN.md §2 (docs system), §3 (question
+policy) and §4 (exit gate). Do not paste secrets, account IDs, tester
+contacts, or real ad IDs.
+Question policy — ask less, gate always: record every answer with its date
+the moment it is given (it belongs in docs/DECISIONS.md). Never re-ask a
+recorded answer. Researchable facts are researched and cited, not asked.
+Reversible choices are your agent-decisions, logged as reversible on
+objection. Two question batches exist in this whole chat: (A) the combined
+direction + DECIDE-ONCE batch, (B) the exit gate. Nothing else is asked.
+1. Research 3–5 differentiated Android app opportunities for Indian users
+using current Play Store evidence and knowledge/niche-method.md. Key
+constraints (my experience, interests, time, target languages/locales) that
+would change the shortlist go into batch (A) — not as one-at-a-time pings.
+For every option, report the target user and painful job, exact search
+phrase, country/date, linked Play listings, market crowding, and any verified
+review signals. Deep-dive the leading one or two: inspect their top five
+relevant listings and read ten recent one-star reviews per leading option.
+Separate observed facts from inference and state uncertainty. Include my real
+advantage, a distinct offline-first four-week v1, privacy/licensing/policy
+risks, plausible monetization (without revenue promises), and a measurable
+kill test written before results.
+2. Present a comparison table and recommend the strongest one or two; do not
+choose for me. Batch (A), one Summary, ≤4 questions: my pick of direction
+(combine/refine allowed) plus the decide-once items (languages/locales,
+monetization model, scope cuts, time budget — a budget beyond four weeks is a
+RULES.md law-3 waiver and is recorded as such).
+3. After my pick, write the plan deliverables as copyable markdown blocks:
+docs/RESEARCH.md, docs/ROADMAP.md (numbered rows including row 0 bootstrap;
+one row = one future chat of execution), docs/DECISIONS.md (every answer so
+far, dated; law waivers in their own section), and templates/readme-app.md
+filled. Sketch screens and the asset/data schema inside roadmap rows — never
+as code.
+4. Batch (B), the exit Summary and nothing else (PLAN.md §4): plan
+approve/revise/hold · authorize repo creation (public/private, MIT/GPL-3.0) ·
+git author identity · working name + package ID. Then stop. No repo and no
+code until I answer.
+```
 
 ## P1 — research app options
 
@@ -68,7 +114,9 @@ options. If no option has been selected, stop before creating a repo or code.
 Before app code, read https://github.com/pabi277/AppFlow at pinned commit
 [PLAYBOOK_SHA] and follow its START.md. Copy templates/ and knowledge/ into
 this new repo as frozen files, add the provenance line to README.md, and commit
-that snapshot first. Then fill templates/readme-app.md as README.md, choose
+that snapshot first. Then commit the plan chat's docs/ files (RESEARCH, ROADMAP,
+DECISIONS, from templates/docs-system/) as "Plan docs" before any app code.
+Then fill templates/readme-app.md as README.md, choose
 MIT, create a minimal Gradle/AGP hello-screen skeleton, wire
 ci-build.yml using secret names only, add a unit test, and make CI green with
 a signed AAB and APK. Do not commit secrets, account identifiers, real
@@ -248,4 +296,37 @@ specific verified blocker. Do not invent thresholds after seeing the results,
 claim statistical certainty from a small sample, or recommend endless
 polishing. Cite the decision rule and state what evidence would change it.
 [PASTE AGGREGATED NUMBERS ONLY — NO USER-LEVEL DATA]
+```
+
+## P9 — execute one roadmap step
+
+```text
+Change-control: use only the assigned session branch. Never create/switch
+to another branch, push to `main`, force-push, or use `git reset --hard`.
+Before committing, verify author/committer identities with `git var` and
+inspect the resulting commit before pushing. Use only this app repo owner's
+designated address as author; no per-commit ask after designation. If none
+is available, stop and ask. Keep committer identity owner-approved. Never
+use AppFlow's owner-specific addresses or an agent's personal email/account.
+Do not copy personal addresses into tracked app docs; author email may be
+public in Git metadata.
+Do not create/open a PR without the owner's explicit command in chat; PR
+creation and merging are separate approvals. Work one task at a time; do
+not parallelize tasks or open a second PR while any PR is open. Check the
+current git/PR/CI state and do not duplicate an existing run.
+Do not merge, release, publish, deploy, or dispatch an expensive/destructive
+workflow without explicit authorization for that action. A code request,
+branch push, or green CI is not authorization; stop at the approval gate.
+Continue the [APP] plan. Read docs/ROADMAP.md and docs/DECISIONS.md before
+asking or deciding anything: never re-ask a recorded answer (that is a
+defect, not caution), and ask GATE items only per PLAN.md §3 — each gate gets
+its own explicit ask, one Summary batch. Implement roadmap step [N] only; its
+"Done means" cell is the acceptance test, and no feature outside this row may
+be added. Evidence before hypothesis: cite file:line reads against the
+current tree. Update docs with the code: set the row's status in ROADMAP.md,
+write docs/steps/NN-<slug>.md from templates/docs-system/STEP_RECORD.md, and
+log any new decision in DECISIONS.md (my answers under Owner decisions; your
+reversible calls under Agent decisions, marked reversible on objection).
+Commit and push the session branch, get CI green, then report the run id, tip
+sha, and what changed — and stop at the merge gate.
 ```
