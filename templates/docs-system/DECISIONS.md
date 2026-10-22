@@ -20,6 +20,11 @@
 
 - YYYY-MM-DD — [choice] — [why] — reversible on objection
 
+## Third-party licences (everything shipped, per reuse-first §3)
+
+- YYYY-MM-DD — [library/sample] [version pinned] — [licence] — [DEPEND/ADAPT;
+  notices kept in the app's licences screen]
+
 ## Open (decide-once items not yet asked)
 
 - [item]

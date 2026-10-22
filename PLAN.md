@@ -16,6 +16,10 @@
 | **2 · EXECUTE** | one per phase | the app repo (phase 0), then one working increment per chat | CI green + **downloadable APK artifact** + docs updated + report; merge gate in [RULES](RULES.md) |
 
 - No repository, no app code, no Play/account action in the plan chat.
+- The plan chat also runs the **reuse scan** (`knowledge/reuse-first.md` §2)
+  for the whole app — architecture base, ONE UI base sample, data, and
+  ads/billing — so the roadmap is priced on reuse, not on writing everything.
+  Hand-building anything the scan has not covered is not planned work.
 - Phases run in order. A new phase starts only when the previous phase is
   recorded done (or explicitly held by the owner).
 

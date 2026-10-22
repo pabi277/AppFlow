@@ -13,6 +13,11 @@
 - <NN>.2 — [part] — [status]
 - <NN>.3 — [part] — [status]
 
+## Reused (reuse-first scan for this phase)
+
+- [part] — [DEPEND/ADAPT/STUDY/BUILD/REJECT] — [source + licence + pinned
+  version, or why building it won]. A part with no line has not been scanned.
+
 ## Evidence (before the change)
 
 [Exact `file:line` reads / device output / CI annotation that justified the

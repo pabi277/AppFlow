@@ -16,6 +16,18 @@
 | 1 | | | | | | |
 | 2 | | | | | | |
 
+## Reuse map (knowledge/reuse-first.md — scan before building)
+
+| Capability | Candidate (link, checked date) | Licence | Activity | Verdict (DEPEND/ADAPT/STUDY/BUILD/REJECT) | Why |
+|---|---|---|---|---|---|
+| Architecture base | | | | | |
+| UI base (ONE sample/pattern) | | | | | |
+| Data / offline | | | | | |
+| Ads / billing (phase 4) | | | | | |
+
+[Studied clean-room (reuse-first §4A): app/repo + date — behaviour taken,
+no code/assets copied. Rejected libraries stay listed here with reasons.]
+
 ## Chosen direction
 
 [The owner's pick or refinement, with date. Chosen at the plan-chat gate — do

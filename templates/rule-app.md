@@ -75,6 +75,12 @@ already answered in chat or docs · taste with an obvious default.
   verify.
 - The privacy policy and Data Safety answers stay truthful to the shipped
   build. Licenses of vendored code are recorded in `docs/DECISIONS.md`.
+- Reuse stays lawful: only licence-compatible code is depended on or
+  adapted (MIT/Apache/BSD into any app; GPL code only into a GPL app);
+  studied targets (GPL/AGPL/closed apps) are re-implemented clean-room —
+  behaviour and patterns, never copied code, text, or assets; never bypass
+  billing, ads, DRM, licence checks, or access controls. One library per
+  job — no duplicates, no dependency without a recorded verdict.
 - Kill fast: the pre-written kill test in `docs/RESEARCH.md` decides
   ship-next vs iterate — flat retention/downloads after the first weeks means
   the next app, not endless polishing. Never rewrite the test after seeing

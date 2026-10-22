@@ -119,7 +119,13 @@ recorded is re-asked), and AppFlow is provenance only.
    the provenance line.
 2. Create the app's own root `LICENSE` (MIT or GPL-3.0) before app code; do not
    mistake the playbook's mixed license notice for the app's license.
-3. Create the smallest Gradle skeleton and a hello screen.
+3. Create the smallest Gradle skeleton and a hello screen — following the
+   plan's reuse map (`docs/RESEARCH.md`): the named architecture pattern and
+   ONE UI base sample from `knowledge/open-source-references.md`, the app
+   theme generated from one seed colour, plus one unit test and one
+   screenshot test (knowledge/app-engineering.md §§2–3). Pin every library
+   version from its official artefact; log shipped licences in
+   `docs/DECISIONS.md`.
 4. Copy `templates/ci-build.yml` to `.github/workflows/ci-build.yml`; wire the
    owner's signing secrets by name, never by committing secret values.
 5. Get CI green (unit tests and signed release artifacts). Every push — every
@@ -153,6 +159,11 @@ outside Git.
 - [ ] Evidence-backed app options were presented and the owner explicitly
       selected a direction before repo creation?
 - [ ] Niche verdict line written? Use `knowledge/niche-method.md`.
+- [ ] Reuse map done? `docs/RESEARCH.md` names, per capability (architecture,
+      ONE UI base, data/offline, ads/billing): the verified candidate, its
+      licence and activity check date, and a DEPEND / ADAPT / STUDY / BUILD /
+      REJECT verdict (`knowledge/reuse-first.md`). No hand-building what the
+      scan has not covered; no GPL code headed for an MIT app.
 - [ ] License chosen? MIT or GPL-3.0, with the app's license template ready.
 
 For eligible personal Play accounts created after 2023-11-13, the current

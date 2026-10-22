@@ -20,6 +20,12 @@ app templates or a new app repository.
   deliberately.
 - Search for changed Google Play and AdMob requirements; update dated claims
   and their sources, not just wording.
+- Re-verify knowledge/open-source-references.md and knowledge/reuse-first.md:
+  open every catalogue link; record archived, silent, licence-changed, or
+  superseded entries with the check date and replace them — never judge by
+  stars/forks alone (popularity can be inflated; licence and recent activity
+  decide). Re-check the watch list (e.g. agent-driven reverse-engineering
+  tools) before promoting anything from it.
 - Verify every internal link and confirm the required files still exist.
 - Check `APP_LIST.md` against Play Console/live listings; names, package IDs,
   URLs, statuses, and verification dates must be exact and current.

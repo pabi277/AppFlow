@@ -66,7 +66,13 @@ not choose for me.
 markdown (PLAN.md §2) — the future app repo must work with no other repo
 reachable:
    - docs/RESEARCH.md — options + evidence with check dates, rejected options
-     with reasons, the niche verdict line, the pre-written kill test;
+     with reasons, the niche verdict line, the pre-written kill test, and the
+     REUSE MAP (knowledge/reuse-first.md §2 scan, whole app: architecture
+     base, ONE UI base sample, data/offline, ads/billing — per capability a
+     verified candidate with licence + activity checked today, and a
+     DEPEND / ADAPT / STUDY / BUILD / REJECT verdict; rejected candidates
+     stay listed with reasons). Price the roadmap on reuse, not on writing
+     everything from scratch;
    - docs/ROADMAP.md — numbered PHASES (2–4 parts each; v1 ≈ 5–8 phases;
      phase 0 = bootstrap; merge anything smaller than half a day of work into
      a neighbour), every "Done means" cell including the downloadable APK

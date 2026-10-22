@@ -32,6 +32,10 @@
 - Evidence before hypothesis (`file:line`). CI green required, with the
   downloadable `app-progress-apk` artifact uploaded. Docs ride with the code
   commit: phase record, roadmap status, `prompt.md`.
+- **Reuse first** (frozen `knowledge/reuse-first.md` + catalogue): research
+  open source before building any part; record DEPEND/ADAPT/STUDY/BUILD/
+  REJECT per part in the phase record; one UI base, one library per job,
+  shipped licences logged in `docs/DECISIONS.md`.
 
 ## State (update at every phase end)
 
