@@ -11,7 +11,10 @@ Read [PURPOSE](PURPOSE.md), [RULES](RULES.md) (approval/identity), [PLAN](PLAN.m
 Build reuse-first: [knowledge/reuse-first.md](knowledge/reuse-first.md) (research
 open source before building anything), the verified catalogue in
 [knowledge/open-source-references.md](knowledge/open-source-references.md), and
-the best-way build reference [knowledge/app-engineering.md](knowledge/app-engineering.md).
+the best-way build reference [knowledge/app-engineering.md](knowledge/app-engineering.md),
+and [knowledge/fast-quality-no-device.md](knowledge/fast-quality-no-device.md)
+(quality proven in CI without device tests, fast builds, and the next-chat
+prompt printed in chat at every phase end).
 Verify live Play and AdMob requirements before each release; policies change.
 Prose outside `templates/`: CC BY 4.0; `templates/`: MIT (see [LICENSE](LICENSE)).
 Review quarterly; see [MAINTENANCE.md](MAINTENANCE.md) for upkeep.

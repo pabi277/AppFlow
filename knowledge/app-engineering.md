@@ -112,12 +112,14 @@ invention:
 | Unit (host) | Domain logic, ViewModels (Turbine), repositories with fakes, Policy | `./gradlew testDebugUnitTest` in CI — every push |
 | Screenshot | Every screen's key states (§3.4) | Paparazzi/Roborazzi in CI |
 | Static | detekt + ktlint | CI gate, not a suggestion |
-| Instrumented (sparingly) | One smoke path through the real app | Local/device or CI emulator for release prep; too slow for every push |
-| Manual device pass | Core offline flow, consent, purchase+restore, permissions | Phase record checklist before release phases |
+| Instrumented (sparingly) | One smoke path through the real app | CI emulator, release lane/manual dispatch only; too slow for every push |
+| Manual device pass | ONLY what CI cannot prove: consent render, purchase+restore, runtime permissions, airplane-mode core flow | **Once, before production** — never a per-phase gate (`fast-quality-no-device.md` §3) |
 
 A phase is not done on "it compiles": it is done when its "Done means"
 is proven by a row of this table plus the downloadable
-`app-progress-apk` (PLAN.md §5).
+`app-progress-apk` (PLAN.md §5). The full no-device gate, the fast-build
+rules, and the "good enough" definition live in
+[fast-quality-no-device.md](fast-quality-no-device.md).
 
 ## 7. Performance on the devices that matter
 

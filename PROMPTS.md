@@ -349,8 +349,16 @@ templates/docs-system/PHASE_RECORD.md (including what the APK shows), log any
 new decision in DECISIONS.md (my answers under Owner decisions; your
 reversible calls under Agent decisions, marked reversible on objection), and
 update the repo's prompt.md (templates/prompt-app.md) in the same commit.
-Commit and push the session branch, get CI green, and confirm the run's
-app-progress-apk artifact is uploaded (I must be able to download and sideload
-it to see this phase's progress). Then report the run id, tip sha, APK
-artifact name, and what is now visible — and stop at the merge gate.
+Commit and push the session branch, get CI green (including the no-device
+quality gate in the frozen knowledge/fast-quality-no-device.md §1 — unit +
+screenshot + lint; no physical-device test gates a phase), and confirm the
+run's app-progress-apk artifact is uploaded (I must be able to download and
+sideload it to see this phase's progress). Then report the run id, tip sha,
+APK artifact name, and what is now visible — then PRINT THE NEXT-CHAT
+PROMPT IN THIS CHAT: one fully-filled copyable text block from
+templates/next-chat-prompt.md for the next phase (its parts, its verbatim
+"Done means", the decisions I must never be re-asked, the CI/APK facts).
+I will start the next chat by copying that block from this chat; do not
+make me open GitHub, the branch, or prompt.md to get it (prompt.md is
+still updated in the commit as backup only). Then stop at the merge gate.
 ```

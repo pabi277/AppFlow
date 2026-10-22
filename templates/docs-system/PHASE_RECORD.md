@@ -29,9 +29,18 @@ work. No fix on a guess.]
 by the next change — versions, checksums, shas — are noted here as facts, not
 guessed.]
 
-## Tests
+## Tests (no-device gate — knowledge/fast-quality-no-device.md §1)
 
-[What now proves it: unit test names, CI run id, device round result if any.]
+[What now proves it without a device: unit/Robolectric test names,
+screenshot tests approved/updated, lint/detekt result, CI run id. A
+physical device never gates a phase; the one release-time device pass
+(§3 of that file) is recorded in the release phase record only.]
+
+## Next-chat prompt
+
+- [ ] Printed IN CHAT at phase end (from templates/next-chat-prompt.md,
+      fully filled for phase <NN+1>) — owner copies the next chat's start
+      from the chat; `prompt.md` updated in this commit as backup only.
 
 ## Follow-ups
 

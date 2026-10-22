@@ -131,11 +131,16 @@ recorded is re-asked), and AppFlow is provenance only.
 5. Get CI green (unit tests and signed release artifacts). Every push — every
    phase — also uploads the downloadable `app-progress-apk` debug artifact, so
    progress is visible after each phase ([PLAN.md](PLAN.md) §5).
-6. From here, run **one phase per chat** ([PLAN.md](PLAN.md) §5): paste the
-   repo's `prompt.md`, say `start phase N`, and each chat ends with the phase's
-   APK artifact, its `docs/phases/NN-<slug>.md` record, `prompt.md` updated,
-   and a stop at the merge gate. The repo's own `rule.md` is the manual —
-   no other repo is needed.
+6. From here, run **one phase per chat** ([PLAN.md](PLAN.md) §5): the first
+   chat starts from the repo's `prompt.md`; every later chat starts from
+   the **next-chat prompt the previous chat printed in the chat itself**
+   (from `templates/next-chat-prompt.md`) — the owner copies it from the
+   chat and never has to open GitHub or the branch to continue. Each chat
+   ends with the phase's APK artifact, its `docs/phases/NN-<slug>.md`
+   record, `prompt.md` updated (backup only), the next-chat prompt printed
+   in chat, and a stop at the merge gate. The repo's own `rule.md` is the
+   manual — no other repo is needed. Quality is proven in CI without
+   device tests (`knowledge/fast-quality-no-device.md`).
 
 ## 4. Pre-code checklist
 

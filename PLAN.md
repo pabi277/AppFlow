@@ -145,8 +145,20 @@ Each phase chat ends with **all** of:
    shows**), the roadmap row's status updated;
 4. `prompt.md` updated in the same commit (state, CI run, APK note, next
    phase);
-5. a short report (run id, tip sha, APK artifact name, what is now visible),
-   and a stop at the merge gate.
+5. a short report (run id, tip sha, APK artifact name, what is now visible);
+6. **the next-chat prompt printed IN CHAT** — one fully-filled copyable
+   block from `templates/next-chat-prompt.md` (next phase, its parts and
+   "Done means", decisions never to re-ask, CI/APK facts). The owner
+   copies the next chat's start from the chat itself; they never have to
+   open GitHub, the branch, or any file to get it. `prompt.md` in the
+   repo remains only the durable backup if a chat is lost;
+7. and a stop at the merge gate.
+
+Quality is proven **without device tests**: the phase's no-device gate
+(`knowledge/fast-quality-no-device.md` §1 — unit + screenshot + lint in
+CI) is part of "Done means". The owner's sideload look at
+`app-progress-apk` is a look, not a test the phase waits for; the one
+short real-device pass happens once, before production (§3 of that file).
 
 ## 6. Frozen playbook, self-contained app
 
