@@ -38,8 +38,13 @@ choose for me. Batch (A), one Summary, ≤4 questions: my pick of direction
 (combine/refine allowed) plus the decide-once items (languages/locales,
 monetization model, scope cuts, time budget — a budget beyond four weeks is a
 RULES.md law-3 waiver and is recorded as such).
-3. After my pick, write the plan deliverables as copyable markdown blocks:
-docs/RESEARCH.md, docs/ROADMAP.md (numbered **phases**, not slivers — one
+3. After my pick, run the reuse scan (knowledge/reuse-first.md §2, catalogue:
+knowledge/open-source-references.md) for the whole app and write the plan
+deliverables as copyable markdown blocks:
+docs/RESEARCH.md (options plus the REUSE MAP — per capability a verified
+candidate with licence + activity checked today and a DEPEND/ADAPT/STUDY/
+BUILD/REJECT verdict; price the roadmap on reuse), docs/ROADMAP.md
+(numbered **phases**, not slivers — one
 phase = one chat = one downloadable APK; 2–4 parts per phase; v1 is ~5–8
 phases; if a row is smaller than half a day of work, merge it into a
 neighbour), docs/DECISIONS.md (every answer so far, dated; law waivers in
@@ -149,7 +154,12 @@ Do not merge, release, publish, deploy, or dispatch an expensive/destructive
 workflow without explicit authorization for that action. A code request,
 branch push, or green CI is not authorization; stop at the approval gate.
 Design and then, only after I approve the plan, implement a tiny offline-first
-Android v1 for [NICHE]. Keep source data in versioned assets (no backend or
+Android v1 for [NICHE]. Reuse first (knowledge/reuse-first.md +
+knowledge/app-engineering.md): follow the plan's reuse map — the named
+architecture pattern, ONE adapted UI base sample, theme generated from one
+seed colour, a @Preview and a screenshot test per screen — and do not
+hand-build any capability the reuse scan has not covered. Keep source
+data in versioned assets (no backend or
 login unless evidence proves necessary). First list the user problem, the
 screens and their purpose, the asset/data schema, accessibility states, and
 unit tests. Put rewarded-ad eligibility behind a host-testable Policy
@@ -330,14 +340,25 @@ answer (that is a defect, not caution), and ask GATE items only per rule.md
 **phase [N] only** — all
 its 2–4 parts, no feature outside this phase; its "Done means" cell is the
 acceptance test. Evidence before hypothesis: cite file:line reads against the
-current tree. Update docs with the code: set the phase's status in
+current tree. Reuse first: run the phase's reuse scan (frozen
+knowledge/reuse-first.md) before building any part and open the phase record
+with its "Reused" verdicts; log any newly shipped licence in DECISIONS.md.
+Update docs with the code: set the phase's status in
 ROADMAP.md, write docs/phases/NN-<slug>.md from
 templates/docs-system/PHASE_RECORD.md (including what the APK shows), log any
 new decision in DECISIONS.md (my answers under Owner decisions; your
 reversible calls under Agent decisions, marked reversible on objection), and
 update the repo's prompt.md (templates/prompt-app.md) in the same commit.
-Commit and push the session branch, get CI green, and confirm the run's
-app-progress-apk artifact is uploaded (I must be able to download and sideload
-it to see this phase's progress). Then report the run id, tip sha, APK
-artifact name, and what is now visible — and stop at the merge gate.
+Commit and push the session branch, get CI green (including the no-device
+quality gate in the frozen knowledge/fast-quality-no-device.md §1 — unit +
+screenshot + lint; no physical-device test gates a phase), and confirm the
+run's app-progress-apk artifact is uploaded (I must be able to download and
+sideload it to see this phase's progress). Then report the run id, tip sha,
+APK artifact name, and what is now visible — then PRINT THE NEXT-CHAT
+PROMPT IN THIS CHAT: one fully-filled copyable text block from
+templates/next-chat-prompt.md for the next phase (its parts, its verbatim
+"Done means", the decisions I must never be re-asked, the CI/APK facts).
+I will start the next chat by copying that block from this chat; do not
+make me open GitHub, the branch, or prompt.md to get it (prompt.md is
+still updated in the commit as backup only). Then stop at the merge gate.
 ```

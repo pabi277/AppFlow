@@ -31,6 +31,10 @@ and `knowledge/` before any app code exists.
   owner-approved.
 - For each app, the agent researches 3–5 evidence-backed options; the owner
   selects or refines one before any app repo or code is created.
+- Reuse first: the agent researches open source before building anything
+  (knowledge/reuse-first.md) — verified libraries, official samples, and
+  studied patterns before hand-written code; every reuse verdict and shipped
+  licence is recorded in the app's docs.
 - Keep `APP_LIST.md` as the portfolio register and record only confirmed,
   exact Google Play titles; never invent official names.
 - The owner verifies facts, legal/tax choices, app content, and final releases.

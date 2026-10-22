@@ -32,6 +32,10 @@
 - Evidence before hypothesis (`file:line`). CI green required, with the
   downloadable `app-progress-apk` artifact uploaded. Docs ride with the code
   commit: phase record, roadmap status, `prompt.md`.
+- **Reuse first** (frozen `knowledge/reuse-first.md` + catalogue): research
+  open source before building any part; record DEPEND/ADAPT/STUDY/BUILD/
+  REJECT per part in the phase record; one UI base, one library per job,
+  shipped licences logged in `docs/DECISIONS.md`.
 
 ## State (update at every phase end)
 
@@ -46,7 +50,10 @@
 1. Read `docs/ROADMAP.md`, `docs/DECISIONS.md`, and the latest
    `docs/phases/` record — trust the repo, not memory.
 2. Implement **phase [N+1]**, all its parts, evidence-first.
-3. End with: CI green + the run's downloadable `app-progress-apk` artifact ·
+3. End with: CI green (incl. the no-device quality gate, frozen
+   `knowledge/fast-quality-no-device.md` §1) + the run's downloadable
+   `app-progress-apk` artifact ·
    `docs/phases/[NN]-<slug>.md` (say what the APK shows) · roadmap row ✅ ·
    this file updated · short report (run id, tip sha, APK, what is now
-   visible) · stop at the merge gate.
+   visible) · **the next-chat prompt printed in chat** (from
+   `templates/next-chat-prompt.md`, fully filled) · stop at the merge gate.

@@ -52,17 +52,28 @@ already answered in chat or docs · taste with an obvious default.
    repository, not memory.
 2. Evidence before hypothesis: `file:line` reads against the current tree.
    No fix on a guess.
-3. Implement the current phase only (2–4 parts; one whole capability). Its
-   "Done means" cell in `docs/ROADMAP.md` is the acceptance test. Nothing
-   outside it.
-4. Tests + CI green. CI is the executor of record. The run must upload the
-   downloadable **`app-progress-apk`** artifact — every phase must be visible
-   to me as a sideloadable build.
+3. Reuse scan first, then implement the current phase only (2–4 parts; one
+   whole capability). Before building any part, check whether a verified
+   library, official sample, or studied pattern already does it (frozen
+   `knowledge/reuse-first.md`; verdicts DEPEND/ADAPT/STUDY/BUILD/REJECT)
+   and open the phase record with its "Reused" line. Its "Done means" cell
+   in `docs/ROADMAP.md` is the acceptance test. Nothing outside it.
+4. Tests + CI green, **without device tests**: the no-device quality gate
+   (frozen `knowledge/fast-quality-no-device.md` §1 — unit + Robolectric +
+   screenshot + lint on the JVM) is part of "Done means"; a physical
+   device never gates a phase. CI is the executor of record. The run must
+   upload the downloadable **`app-progress-apk`** artifact — every phase
+   must be visible to me as a sideloadable build.
 5. Docs ride with the code commit: `docs/phases/NN-<slug>.md` record
    (including what the APK shows), roadmap status, `docs/DECISIONS.md` if
    anything new, and `prompt.md` updated.
-6. Report (run id, tip sha, APK artifact name, what is now visible) — then
-   **stop at the merge gate** (§2).
+6. Report (run id, tip sha, APK artifact name, what is now visible), then
+   **print the next-chat prompt IN CHAT** — one fully-filled copyable
+   block from `templates/next-chat-prompt.md` for the next phase (parts,
+   "Done means", decisions never to re-ask, CI/APK facts). I start the
+   next chat by copying it from this chat; I never have to open GitHub,
+   the branch, or any file to get it. `prompt.md` in the commit is backup
+   only. Then **stop at the merge gate** (§2).
 
 ## 5. Invariants — do not break (append app-specific ones as phases decide)
 
@@ -75,6 +86,12 @@ already answered in chat or docs · taste with an obvious default.
   verify.
 - The privacy policy and Data Safety answers stay truthful to the shipped
   build. Licenses of vendored code are recorded in `docs/DECISIONS.md`.
+- Reuse stays lawful: only licence-compatible code is depended on or
+  adapted (MIT/Apache/BSD into any app; GPL code only into a GPL app);
+  studied targets (GPL/AGPL/closed apps) are re-implemented clean-room —
+  behaviour and patterns, never copied code, text, or assets; never bypass
+  billing, ads, DRM, licence checks, or access controls. One library per
+  job — no duplicates, no dependency without a recorded verdict.
 - Kill fast: the pre-written kill test in `docs/RESEARCH.md` decides
   ship-next vs iterate — flat retention/downloads after the first weeks means
   the next app, not endless polishing. Never rewrite the test after seeing
@@ -83,7 +100,8 @@ already answered in chat or docs · taste with an obvious default.
 
 ## 6. Definition of done (any change)
 
-CI green · tests · docs updated · `prompt.md` current · `app-progress-apk`
-uploaded · short report — then stop. A release additionally needs every item
+CI green (incl. the no-device quality gate) · tests · docs updated ·
+`prompt.md` current · next-chat prompt printed in chat ·
+`app-progress-apk` uploaded · short report — then stop. A release additionally needs every item
 on `templates/play-checklist.md` (or the app's `docs/` copy) green and my
 explicit command.

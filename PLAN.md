@@ -16,6 +16,10 @@
 | **2 · EXECUTE** | one per phase | the app repo (phase 0), then one working increment per chat | CI green + **downloadable APK artifact** + docs updated + report; merge gate in [RULES](RULES.md) |
 
 - No repository, no app code, no Play/account action in the plan chat.
+- The plan chat also runs the **reuse scan** (`knowledge/reuse-first.md` §2)
+  for the whole app — architecture base, ONE UI base sample, data, and
+  ads/billing — so the roadmap is priced on reuse, not on writing everything.
+  Hand-building anything the scan has not covered is not planned work.
 - Phases run in order. A new phase starts only when the previous phase is
   recorded done (or explicitly held by the owner).
 
@@ -141,8 +145,20 @@ Each phase chat ends with **all** of:
    shows**), the roadmap row's status updated;
 4. `prompt.md` updated in the same commit (state, CI run, APK note, next
    phase);
-5. a short report (run id, tip sha, APK artifact name, what is now visible),
-   and a stop at the merge gate.
+5. a short report (run id, tip sha, APK artifact name, what is now visible);
+6. **the next-chat prompt printed IN CHAT** — one fully-filled copyable
+   block from `templates/next-chat-prompt.md` (next phase, its parts and
+   "Done means", decisions never to re-ask, CI/APK facts). The owner
+   copies the next chat's start from the chat itself; they never have to
+   open GitHub, the branch, or any file to get it. `prompt.md` in the
+   repo remains only the durable backup if a chat is lost;
+7. and a stop at the merge gate.
+
+Quality is proven **without device tests**: the phase's no-device gate
+(`knowledge/fast-quality-no-device.md` §1 — unit + screenshot + lint in
+CI) is part of "Done means". The owner's sideload look at
+`app-progress-apk` is a look, not a test the phase waits for; the one
+short real-device pass happens once, before production (§3 of that file).
 
 ## 6. Frozen playbook, self-contained app
 
