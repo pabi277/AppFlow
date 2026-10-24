@@ -14,6 +14,7 @@ Bootstrapped from AppFlow @ <sha> on <date>
 | # | Phase (2–4 parts) | Done means | Status |
 |---|---|---|---|
 | 0 | Bootstrap + hello (P2/P3) | snapshot + plan docs + LICENSE + README + CI green; APK opens on the hello screen | 📋 |
+| 0-D | UI reference site + tokens freeze | disposable phone-shaped web prototype (`knowledge/ui-reference-site.md`, in `design/reference/`) owner-approved in chat; tokens + mapping frozen in `docs/UI-REFERENCE.md`; hello screen's Compose theme generated from the frozen seed. No later UI phase may start before this row is ✅ | 📋 |
 | 1 | [core capability A] | [observable behavior]; APK shows [what] | 📋 |
 | 2 | [core capability B] | [observable behavior]; APK shows [what] | 📋 |
 | 3 | [core capability C] | [observable behavior]; APK shows [what] | 📋 |

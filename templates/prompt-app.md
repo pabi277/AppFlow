@@ -36,6 +36,10 @@
   open source before building any part; record DEPEND/ADAPT/STUDY/BUILD/
   REJECT per part in the phase record; one UI base, one library per job,
   shipped licences logged in `docs/DECISIONS.md`.
+- **UI from the approved reference** (frozen
+  `knowledge/ui-reference-site.md`, `docs/UI-REFERENCE.md`): no UI coding
+  before owner approval + frozen tokens; copy screens from the reference,
+  screenshot-compare, record deliberate native adaptations only.
 
 ## State (update at every phase end)
 

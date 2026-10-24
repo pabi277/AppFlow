@@ -79,6 +79,12 @@ already answered in chat or docs · taste with an obvious default.
 
 - Offline-first core; no backend, login, or analytics without recorded
   evidence of need.
+- UI follows the approved reference: no app UI code before the reference
+  site is owner-approved and tokens frozen in `docs/UI-REFERENCE.md`
+  (frozen `knowledge/ui-reference-site.md`); screens are copied from the
+  reference and screenshot-compared; differences only as recorded
+  deliberate native adaptations; visual changes go reference-first,
+  then screen — never the reverse.
 - No secrets, real ad IDs, account IDs, or tester personal data in git or chat.
 - Ads: rewarded-first, never mid-task; the ad-free purchase is always offered;
   test ad units only until the owner authorizes live units (GATE).

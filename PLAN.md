@@ -20,6 +20,13 @@
   for the whole app — architecture base, ONE UI base sample, data, and
   ads/billing — so the roadmap is priced on reuse, not on writing everything.
   Hand-building anything the scan has not covered is not planned work.
+- **UI is designed on the web first** (`knowledge/ui-reference-site.md`):
+  the plan chat names the reference stack and lists every screen+state
+  (no site is built in the plan chat); in Phase 0 the disposable
+  phone-shaped reference site is built, **owner-approved in chat, and
+  its tokens frozen** in `docs/UI-REFERENCE.md` — before any app UI code
+  beyond the hello screen. No UI phase builds against an unapproved
+  reference.
 - Phases run in order. A new phase starts only when the previous phase is
   recorded done (or explicitly held by the owner).
 
@@ -35,7 +42,8 @@ live in `templates/` (`docs-system/`, `rule-app.md`, `prompt-app.md`,
 | `README.md` | what the app is (from `templates/readme-app.md`, provenance line kept) |
 | `rule.md` (repo root) | **the app's own operating manual** — laws, merge gate, question policy, work cycle, invariants, definition of done. Self-contained: authoritative even if AppFlow is unreachable (`templates/rule-app.md`) |
 | `prompt.md` (repo root) | the **self-contained continuation prompt** — paste it into the next chat; updated at every phase end (§6, `templates/prompt-app.md`) |
-| `docs/RESEARCH.md` | 3–5 evidence-backed options (links + check dates), the niche verdict line, **rejected options with reasons**, the pre-written kill test |
+| `docs/RESEARCH.md` | 3–5 evidence-backed options (links + check dates), the niche verdict line, **rejected options with reasons**, the pre-written kill test, and the **reuse map** (`knowledge/reuse-first.md`) |
+| `docs/UI-REFERENCE.md` | the **UI design specification**: chosen reference stack, every screen+state, frozen tokens, web→Compose mapping, owner approval record, deliberate native adaptations (`templates/docs-system/UI_REFERENCE.md`; workflow: `knowledge/ui-reference-site.md`) |
 | `docs/ROADMAP.md` | numbered **phases** in execution order; one phase = one chat; status 📋 planned · 🚧 in progress · ✅ done · ❌ cancelled (keep the row) |
 | `docs/DECISIONS.md` | the dated decision log — **the anti-re-ask register**: owner decisions, law waivers, agent decisions |
 | `docs/phases/NN-<slug>.md` | one record per phase: its parts, evidence (`file:line`), what shipped, tests, **what the APK shows** |

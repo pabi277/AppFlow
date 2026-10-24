@@ -14,7 +14,10 @@ open source before building anything), the verified catalogue in
 the best-way build reference [knowledge/app-engineering.md](knowledge/app-engineering.md),
 and [knowledge/fast-quality-no-device.md](knowledge/fast-quality-no-device.md)
 (quality proven in CI without device tests, fast builds, and the next-chat
-prompt printed in chat at every phase end).
+prompt printed in chat at every phase end). Design the UI on the web first:
+[knowledge/ui-reference-site.md](knowledge/ui-reference-site.md) (workflow +
+approval gate) with stacks from
+[knowledge/web-ui-references.md](knowledge/web-ui-references.md).
 Verify live Play and AdMob requirements before each release; policies change.
 Prose outside `templates/`: CC BY 4.0; `templates/`: MIT (see [LICENSE](LICENSE)).
 Review quarterly; see [MAINTENANCE.md](MAINTENANCE.md) for upkeep.
