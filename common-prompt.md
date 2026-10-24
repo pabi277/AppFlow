@@ -27,7 +27,10 @@ secrets, account IDs, tester contacts, or real ad IDs.
 Before anything else, read the public playbook
 https://github.com/pabi277/AppFlow at commit <SHA> — PLAN.md, START.md,
 RULES.md, PROMPTS.md (P0), templates/rule-app.md, templates/prompt-app.md,
-and knowledge/niche-method.md — and follow PLAN.md stage 1 exactly. That
+knowledge/niche-method.md, knowledge/reuse-first.md,
+knowledge/open-source-references.md, knowledge/app-engineering.md,
+knowledge/ui-reference-site.md, and knowledge/web-ui-references.md —
+and follow PLAN.md stage 1 exactly. That
 commit is the pinned playbook for this app.
 
 Goal of this ONE chat: all research and a complete, self-contained plan for a
@@ -73,8 +76,15 @@ reachable:
      DEPEND / ADAPT / STUDY / BUILD / REJECT verdict; rejected candidates
      stay listed with reasons). Price the roadmap on reuse, not on writing
      everything from scratch;
+   - docs/UI-REFERENCE.md — from templates/docs-system/UI_REFERENCE.md:
+     the chosen UI reference stack (knowledge/web-ui-references.md §7,
+     default A; DECIDE-ONCE with the design direction), every screen +
+     state listed, token placeholders, empty mapping table. Do NOT build
+     the site in this plan chat — Phase 0 builds it, I approve it in chat,
+     and tokens freeze before any app UI code (knowledge/ui-reference-site.md);
    - docs/ROADMAP.md — numbered PHASES (2–4 parts each; v1 ≈ 5–8 phases;
-     phase 0 = bootstrap; merge anything smaller than half a day of work into
+     phase 0 = bootstrap incl. row 0-D the UI reference site + tokens
+     freeze; merge anything smaller than half a day of work into
      a neighbour), every "Done means" cell including the downloadable APK
      that shows the phase's increment;
    - docs/DECISIONS.md — every answer so far, dated; law waivers in their own

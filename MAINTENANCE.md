@@ -20,7 +20,8 @@ app templates or a new app repository.
   deliberately.
 - Search for changed Google Play and AdMob requirements; update dated claims
   and their sources, not just wording.
-- Re-verify knowledge/open-source-references.md and knowledge/reuse-first.md:
+- Re-verify knowledge/open-source-references.md,
+  knowledge/web-ui-references.md, and knowledge/reuse-first.md:
   open every catalogue link; record archived, silent, licence-changed, or
   superseded entries with the check date and replace them — never judge by
   stars/forks alone (popularity can be inflated; licence and recent activity

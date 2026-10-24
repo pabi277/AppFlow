@@ -52,7 +52,15 @@ including this playbook's older pages.
 Most UI correction rounds come from inventing per-screen. Remove the
 invention:
 
+0. **Design on the web first.** The approved UI reference site and its
+   frozen tokens (`docs/UI-REFERENCE.md`; workflow
+   [ui-reference-site.md](ui-reference-site.md), stacks
+   [web-ui-references.md](web-ui-references.md)) are the visual spec for
+   every screen below. Screens are *copied* from it (layout, spacing,
+   hierarchy), then screenshot-compared against it (§ ui-reference-site
+   §5); deliberate native adaptations are recorded, not drifted into.
 1. **One theme, generated.** Material 3 theme from a single seed colour
+   — the seed frozen in the reference tokens (§0)
    (material-color-utilities, catalogue §3). Dynamic colour where the
    device offers it. Zero per-screen colour/font constants.
 2. **One base sample, adapted.** The plan chat names the ONE

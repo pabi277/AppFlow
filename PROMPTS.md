@@ -43,7 +43,13 @@ knowledge/open-source-references.md) for the whole app and write the plan
 deliverables as copyable markdown blocks:
 docs/RESEARCH.md (options plus the REUSE MAP — per capability a verified
 candidate with licence + activity checked today and a DEPEND/ADAPT/STUDY/
-BUILD/REJECT verdict; price the roadmap on reuse), docs/ROADMAP.md
+BUILD/REJECT verdict; price the roadmap on reuse),
+docs/UI-REFERENCE.md from templates/docs-system/UI_REFERENCE.md (chosen
+reference stack — knowledge/web-ui-references.md §7, default A, a
+DECIDE-ONCE with the design direction; every screen+state listed; do NOT
+build the site in this plan chat — Phase 0 builds it, I approve it in
+chat, tokens freeze before any app UI code,
+knowledge/ui-reference-site.md), docs/ROADMAP.md
 (numbered **phases**, not slivers — one
 phase = one chat = one downloadable APK; 2–4 parts per phase; v1 is ~5–8
 phases; if a row is smaller than half a day of work, merge it into a
@@ -158,7 +164,12 @@ Android v1 for [NICHE]. Reuse first (knowledge/reuse-first.md +
 knowledge/app-engineering.md): follow the plan's reuse map — the named
 architecture pattern, ONE adapted UI base sample, theme generated from one
 seed colour, a @Preview and a screenshot test per screen — and do not
-hand-build any capability the reuse scan has not covered. Keep source
+hand-build any capability the reuse scan has not covered. UI design comes
+from the approved reference site (knowledge/ui-reference-site.md): in
+Phase 0 build the disposable phone-shaped site (docs/UI-REFERENCE.md
+stack), get my in-chat approval, freeze tokens, and only then build
+Compose screens copied from — and screenshot-compared against — it.
+Keep source
 data in versioned assets (no backend or
 login unless evidence proves necessary). First list the user problem, the
 screens and their purpose, the asset/data schema, accessibility states, and

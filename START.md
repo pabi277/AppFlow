@@ -126,6 +126,13 @@ recorded is re-asked), and AppFlow is provenance only.
    screenshot test (knowledge/app-engineering.md §§2–3). Pin every library
    version from its official artefact; log shipped licences in
    `docs/DECISIONS.md`.
+3b. Build the **UI reference site** (roadmap row 0-D,
+   `knowledge/ui-reference-site.md`): the disposable phone-shaped web
+   prototype under `design/reference/` with the plan's chosen stack
+   (`knowledge/web-ui-references.md`, default Option A), every screen +
+   state, presented in chat and **owner-approved**, tokens frozen in
+   `docs/UI-REFERENCE.md`. The hello screen's theme uses the frozen seed.
+   No app UI beyond this starts before that approval.
 4. Copy `templates/ci-build.yml` to `.github/workflows/ci-build.yml`; wire the
    owner's signing secrets by name, never by committing secret values.
 5. Get CI green (unit tests and signed release artifacts). Every push — every
@@ -169,6 +176,10 @@ outside Git.
       licence and activity check date, and a DEPEND / ADAPT / STUDY / BUILD /
       REJECT verdict (`knowledge/reuse-first.md`). No hand-building what the
       scan has not covered; no GPL code headed for an MIT app.
+- [ ] UI reference approved? The phone-shaped reference site was presented
+      in chat and owner-approved, tokens + web→Compose mapping frozen in
+      `docs/UI-REFERENCE.md` (`knowledge/ui-reference-site.md`). No UI phase
+      is planned against an unapproved reference.
 - [ ] License chosen? MIT or GPL-3.0, with the app's license template ready.
 
 For eligible personal Play accounts created after 2023-11-13, the current

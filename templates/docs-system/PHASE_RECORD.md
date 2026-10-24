@@ -36,6 +36,12 @@ screenshot tests approved/updated, lint/detekt result, CI run id. A
 physical device never gates a phase; the one release-time device pass
 (§3 of that file) is recorded in the release phase record only.]
 
+## UI reference comparison (UI phases only)
+
+- [Reference screen/state vs app screenshot reviewed side-by-side;
+  differences fixed, or listed in docs/UI-REFERENCE.md as deliberate
+  native adaptations. Tokens used as frozen — no invented values.]
+
 ## Next-chat prompt
 
 - [ ] Printed IN CHAT at phase end (from templates/next-chat-prompt.md,
