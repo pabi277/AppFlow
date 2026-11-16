@@ -132,13 +132,29 @@ recorded is re-asked), and AppFlow is provenance only.
    (`knowledge/web-ui-references.md`, default Option A), every screen +
    state, presented in chat and **owner-approved**, tokens frozen in
    `docs/UI-REFERENCE.md`. The hello screen's theme uses the frozen seed.
-   No app UI beyond this starts before that approval.
+   No app UI beyond this starts before that approval. The 2–3 Play Store
+   comparables and owner-supplied screenshots are private, temporary behavior
+   references only: never commit them; if local copies are needed, add
+   `design/private-play-reference/` to `.gitignore` before copying and verify
+   with `git check-ignore`. Keep only dated links and clean-room notes, and
+   keep temporary local copies through all app UI phases, then remove them; only
+   the clean-room spec remains in GitHub.
 4. Copy `templates/ci-build.yml` to `.github/workflows/ci-build.yml`; wire the
    owner's signing secrets by name, never by committing secret values.
 5. Get CI green (unit tests and signed release artifacts). Every push — every
    phase — also uploads the downloadable `app-progress-apk` debug artifact, so
    progress is visible after each phase ([PLAN.md](PLAN.md) §5).
-6. From here, run **one phase per chat** ([PLAN.md](PLAN.md) §5): the first
+6. Before any screenshots or audit report are copied into an app workspace,
+   add these entries to its `.gitignore` and verify each with `git check-ignore`:
+   `design/private-play-reference/` and `SECURITY-AUDIT.md`. Before production,
+   complete the applicable checklist in `knowledge/pre-launch-security-audit.md`
+   (frozen snapshot): read-only audit first, owner-approved fixes only,
+   re-test fixes, no Critical/High findings open. Keep the report local-only,
+   then delete it after remediation. Record only a safe summary in
+   the release phase record. Never test third-party/live user systems, expose
+   secrets, or run destructive tests. Use `templates/play-checklist.md` as the
+   final gate.
+7. From here, run **one phase per chat** ([PLAN.md](PLAN.md) §5): the first
    chat starts from the repo's `prompt.md`; every later chat starts from
    the **next-chat prompt the previous chat printed in the chat itself**
    (from `templates/next-chat-prompt.md`) — the owner copies it from the
@@ -176,11 +192,18 @@ outside Git.
       licence and activity check date, and a DEPEND / ADAPT / STUDY / BUILD /
       REJECT verdict (`knowledge/reuse-first.md`). No hand-building what the
       scan has not covered; no GPL code headed for an MIT app.
-- [ ] UI reference approved? The phone-shaped reference site was presented
-      in chat and owner-approved, tokens + web→Compose mapping frozen in
-      `docs/UI-REFERENCE.md` (`knowledge/ui-reference-site.md`). No UI phase
-      is planned against an unapproved reference.
+- [ ] UI reference approved? 2–3 similar Play apps were researched; owner
+      installed/used a selected comparator and supplied screenshots/notes;
+      private evidence was never committed; only clean-room notes remain. The
+      phone-shaped app reference was presented and owner-approved, tokens +
+      web→Compose mapping frozen in `docs/UI-REFERENCE.md`
+      (`knowledge/ui-reference-site.md`). No UI phase uses an unapproved
+      reference.
 - [ ] License chosen? MIT or GPL-3.0, with the app's license template ready.
+- [ ] Security review planned before production? The app roadmap includes the
+      applicable checks in `knowledge/pre-launch-security-audit.md`; detailed
+      findings will be private/local-only, and Critical/High findings block
+      production.
 
 For eligible personal Play accounts created after 2023-11-13, the current
 closed-test gate is at least 12 continuously opted-in testers for 14 days.

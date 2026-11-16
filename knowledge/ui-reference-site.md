@@ -14,11 +14,28 @@
 
 ## 1. When it happens
 
-- **Plan chat:** no site is built (stage 1 creates nothing). The plan
-  names the reference stack (DECIDE-ONCE design direction), lists every
-  screen + its states, and drafts `docs/UI-REFERENCE.md` from
-  `templates/docs-system/UI_REFERENCE.md`. The roadmap's Phase 0 carries
-  the site as a part.
+- **After the app idea is selected, before finalizing its visual brief:**
+  research the 2–3 closest Google Play apps; record listing links, checked
+  date, India storefront/search phrase, evidence limits, visible
+  rating/review themes, and why each is comparable. Prefer a free app available
+  from its official listing; do not direct the owner to a third-party APK or
+  make a purchase (paid comparators require the usual money GATE). Recommend
+  one for the owner to install and use. Wait for their
+  screenshots and notes; this handoff is not a new DECIDE-ONCE question batch.
+- Competitor screenshots are private, temporary context, not design assets.
+  Never commit/push them. If a working copy is needed, put it under
+  `design/private-play-reference/`; add that path to `.gitignore` before
+  copying anything and verify it with `git check-ignore` before use. Keep only
+  those temporary workspace copies (not the owner's originals) until all app
+  UI phases are complete and approved, then delete them. Keep dated
+  listing citations and clean-room behavior observations in
+  `docs/UI-REFERENCE.md`; never copy competitor code, text, icons, assets, or
+  distinctive screen composition. See `knowledge/reuse-first.md` §4A.
+- **Plan chat:** no site is built (stage 1 creates nothing). After the
+  comparator handoff, name the reference stack (DECIDE-ONCE design direction),
+  list every app screen + its states, and draft `docs/UI-REFERENCE.md` from
+  `templates/docs-system/UI_REFERENCE.md`. The roadmap's Phase 0 carries the
+  site as a part.
 - **Phase 0 (bootstrap):** the site is built, owner-approved, and the
   tokens frozen — **before any app UI code beyond the hello screen**.
   No Phase 1+ UI work starts against an unapproved reference.
@@ -50,10 +67,10 @@
 
 ## 3. Approval gate (owner, in chat)
 
-1. Agent presents every screen/state (screenshots or the live preview)
-   in chat. Owner corrects **here** — colour, spacing, hierarchy,
-   wording placeholders — as many rounds as needed; rounds are cheap
-   now and expensive later.
+1. Agent presents every app-specific screen/state (screenshots or the live
+   preview) in chat, informed by the temporary comparator evidence. Owner
+   corrects **here** — colour, spacing, hierarchy, wording placeholders — as
+   many rounds as needed; rounds are cheap now and expensive later.
 2. Owner approves explicitly (or approves with listed changes). Record
    date + stack + what was approved in `docs/UI-REFERENCE.md` and the
    design decision in `docs/DECISIONS.md`.
@@ -94,7 +111,8 @@ looked nice once". New visual values enter via a tokens update first.
    state (UDF/ViewModel) and data follow app-engineering §§2–4.
 3. **Screenshot comparison is the acceptance test:** the screen's
    Paparazzi/Roborazzi shots (fast-quality-no-device §1) are reviewed
-   side-by-side with the reference screenshots in the phase record.
+   side-by-side with screenshots of the app's own approved reference site in
+   the phase record. Competitor screenshots are not retained for later phases.
    Differences are either fixed or listed as **deliberate native
    adaptations** (see §6) in `docs/UI-REFERENCE.md`. "Looks close" in
    prose is not evidence.
@@ -121,7 +139,11 @@ judge the result against that — not against pixel identity.
 
 ## 7. Definition of done (reference step)
 
-Approved screens+states presented in chat · owner approval recorded
-with date · tokens frozen in `docs/UI-REFERENCE.md` · mapping table
-complete for the phases being built · reference committed under
-`design/reference/` (Phase 0 commit) · **then** app UI coding may start.
+2–3 dated Play comparables documented · owner used a comparator and supplied
+private screenshots/notes · clean-room UX notes recorded (no competitor assets)
+· approved app screens+states presented in chat · owner approval recorded
+with date · tokens frozen in `docs/UI-REFERENCE.md` · mapping table complete
+for the phases being built · app-specific reference committed under
+`design/reference/` (Phase 0 commit) · **then** app UI coding may start. After
+all app UI phases are complete, remove local competitor screenshot copies;
+retain only the clean-room spec and app-specific reference site in GitHub.

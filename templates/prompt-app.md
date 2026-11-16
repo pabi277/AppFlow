@@ -37,9 +37,18 @@
   REJECT per part in the phase record; one UI base, one library per job,
   shipped licences logged in `docs/DECISIONS.md`.
 - **UI from the approved reference** (frozen
-  `knowledge/ui-reference-site.md`, `docs/UI-REFERENCE.md`): no UI coding
-  before owner approval + frozen tokens; copy screens from the reference,
-  screenshot-compare, record deliberate native adaptations only.
+  `knowledge/ui-reference-site.md`, `docs/UI-REFERENCE.md`): shortlist 2–3
+  Play comparables after the idea is chosen; the owner uses a comparator and
+  provides temporary private screenshots/notes; never commit competitor
+  images; preserve only clean-room notes and keep ignored local copies until all
+  app UI phases finish; then remove them. The clean-room spec remains in GitHub. No UI coding before owner approval + frozen tokens; compare
+  app screenshots against the app's own reference site, not competitor assets.
+- **Security before production** (frozen
+  `knowledge/pre-launch-security-audit.md`): applicable review, read-only
+  first, owner-approved fixes only, evidence and re-tests; no open Critical/
+  High findings. Detailed reports are ignored/local-only and deleted after
+  remediation; keep only a safe summary. Never expose secrets or test systems
+  the owner does not own.
 
 ## State (update at every phase end)
 

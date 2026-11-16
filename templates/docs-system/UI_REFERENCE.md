@@ -16,6 +16,22 @@
 - Location: `design/reference/` (disposable; never shipped, never in the APK)
 - Preview: [how the owner viewed it — live preview / artifact, date]
 
+## Play Store comparables — behavior research only
+
+| App / India Play listing + search phrase | Checked (UTC) | Visible evidence & limitations | Owner used it? |
+|---|---|---|---|
+| [2–3 closest comparables; no unverified rank claims] | | | |
+
+- Owner screenshots/observations: temporary private context only; never commit
+  them. If a workspace copy is needed, use `design/private-play-reference/`,
+  gitignore it before copying, and verify with `git check-ignore`. Keep only
+  dated citations and clean-room behavior notes here. Keep temporary local
+  copies until every app UI phase is complete; then remove them, leaving the
+  owner's originals untouched and the clean-room spec in GitHub. Record the
+  final UI-phase cleanup date here: [YYYY-MM-DD].
+- Behaviors studied (no copied code, text, icons, assets, or distinctive
+  composition): [job/state/interaction → original design response]
+
 ## Approval
 
 - YYYY-MM-DD — owner approved [all screens / with listed changes] in chat.

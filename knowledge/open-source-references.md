@@ -1,8 +1,9 @@
 # Open-source references — the verified catalogue
 
 > Curated starting points for the reuse scan in
-> [reuse-first.md](reuse-first.md). **Checked live on GitHub, 2026-10-22**
-> (stars/activity/licence read that day). This is a *starting* list, not
+> [reuse-first.md](reuse-first.md). **Catalogue links last comprehensively checked
+> 2026-10-22**; the `morluto/rea` watch entry was rechecked via GitHub API on
+> **2026-11-16** (metadata, licence, latest release). This is a *starting* list, not
 > a whitelist: every entry still passes the reuse-first §3 scorecard at
 > the moment of use, and versions are always pinned from the official
 > artefact (Maven Central / pub.dev / GitHub release), never copied from
@@ -117,14 +118,24 @@ per-sample before any ADAPT.
 
 **WATCH (re-check quarterly, do not depend on yet):**
 
-- [`morluto/rea`](https://github.com/morluto/rea) (MIT; MCP/CLI over
-  Ghidra/JADX/Hopper for agent-driven reverse engineering). Checked
-  2026-10-22: real and actively released (npm `rea-agents` 6.7.0), but
-  6 months old, desktop-only (breaks phone-first), and its popularity
-  signals are unverifiable — it went from <10k stars (6 Oct) to ~363k
-  (22 Oct), growth no quality judgement can rest on; lookalike
-  downloads have carried malware, so official sources only. Posture and
-  trial conditions: [reuse-first.md §4C](reuse-first.md). 
+- [`morluto/rea`](https://github.com/morluto/rea) (MIT; agent-driven reverse
+  engineering / binary inspection). Rechecked **2026-11-16** via
+  [GitHub repository API](https://api.github.com/repos/morluto/rea) and
+  [latest release API](https://api.github.com/repos/morluto/rea/releases/latest):
+  repository is not archived, reports MIT, pushed 2026-11-16, and latest
+  release is `rea-agents-6.9.0` (published 2026-11-11). Its displayed
+  463,016 stars / 113,362 forks are extraordinary and not a quality signal;
+  prior checks recorded abrupt, implausible jumps, so popularity remains
+  unverified as a trust signal. **Can it help build a better AppFlow app?**
+  Not as an app framework, UI reference, Android library, or phone-first build
+  tool: it analyzes applications/binaries rather than implementing an app, and
+  its desktop/tool-provider requirements do not fit this workflow. At most it
+  could be a specialist, isolated aid for inspecting an app's own shipped
+  binary; source code plus existing APK Analyzer/JADX/Apktool is the simpler
+  default. Do not install/use it for competitor-app cloning or bypassing
+  controls. Watch only; official source/package, pinned version, disposable
+  environment, own artifacts only if a genuine need arises. Full posture:
+  [reuse-first.md §4C](reuse-first.md).
 
 **AVOID (REJECT on sight, record why):**
 

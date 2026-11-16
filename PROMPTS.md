@@ -33,6 +33,16 @@ Separate observed facts from inference and state uncertainty. Include my real
 advantage, a distinct offline-first four-week v1, privacy/licensing/policy
 risks, plausible monetization (without revenue promises), and a measurable
 kill test written before results.
+After I select the app direction, research its 2–3 closest Play Store apps
+(India storefront, linked listing, search phrase, check date, evidence limits;
+never guess a store rank), recommend a free app from its official listing for
+me to install/use (no purchase or third-party APK), and pause for my
+screenshots/observations before finalizing the UI brief. This is a handoff,
+not another DECIDE-ONCE batch.
+Screenshots are temporary private context: never commit them. Keep only
+clean-room notes in GitHub; retain ignored local copies until all UI
+implementation phases are complete, then delete them after final UI approval.
+Never copy competitor code, text, icons, assets, or distinctive composition.
 2. Present a comparison table and recommend the strongest one or two; do not
 choose for me. Batch (A), one Summary, ≤4 questions: my pick of direction
 (combine/refine allowed) plus the decide-once items (languages/locales,
@@ -53,13 +63,19 @@ knowledge/ui-reference-site.md), docs/ROADMAP.md
 (numbered **phases**, not slivers — one
 phase = one chat = one downloadable APK; 2–4 parts per phase; v1 is ~5–8
 phases; if a row is smaller than half a day of work, merge it into a
-neighbour), docs/DECISIONS.md (every answer so far, dated; law waivers in
-their own section), the repo's own self-contained rule.md from
+neighbour; include applicable pre-launch checks from
+knowledge/pre-launch-security-audit.md before production), docs/DECISIONS.md
+(every answer so far, dated; law waivers in their own section), the repo's own self-contained rule.md from
 templates/rule-app.md (identity, time budget, any waivers filled in),
 templates/readme-app.md filled, and the app's own self-contained prompt.md
 from templates/prompt-app.md (identity + rules digest + state + continuation).
 The finished app repo must work with no other repo reachable. Sketch screens
-and the asset/data schema inside phase records — never as code.
+and the asset/data schema inside phase records — never as code. Record
+comparator links in docs/RESEARCH.md and clean-room notes in
+docs/UI-REFERENCE.md, never screenshots/assets. If screenshots are copied to
+workspace, gitignore `design/private-play-reference/` before copying and
+verify with `git check-ignore`. Ensure rule.md and roadmap capture the
+pre-launch security-review rules.
 4. Batch (B), the exit Summary and nothing else (PLAN.md §4): plan
 approve/revise/hold · authorize repo creation (public/private, MIT/GPL-3.0) ·
 git author identity · working name + package ID. Then stop. No repo and no
