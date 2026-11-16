@@ -36,6 +36,19 @@ in Play Console before uploading. Current common requirements:
 - [ ] No rankings, fake testimonials, unsupported pass-rate claims, misleading
       official affiliation, or keyword stuffing.
 
+## Security review
+
+- [ ] Complete the applicable checks in the frozen
+      `knowledge/pre-launch-security-audit.md` before production; record scope,
+      counts, and safe unresolved IDs in the release phase record.
+- [ ] No open Critical/High findings. `SECURITY-AUDIT.md` and
+      `design/private-play-reference/` were gitignored before use; the report
+      stayed local-only and was removed after remediation; no competitor
+      screenshots or secret material are committed.
+- [ ] Inspect the final release APK/AAB, merged manifest, permissions,
+      cleartext/network settings, exported components, debug/test surfaces,
+      test ad IDs, staging URLs, and dependencies.
+
 ## Privacy, safety, and ads
 
 - [ ] Publish a working privacy-policy URL and link it in Play Console and the

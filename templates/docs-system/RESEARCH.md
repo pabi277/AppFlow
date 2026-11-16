@@ -16,6 +16,17 @@
 | 1 | | | | | | |
 | 2 | | | | | | |
 
+## Play Store UI comparables (after app-direction selection)
+
+| App / India Play listing + search phrase | Checked UTC | Evidence limits / rating or review themes | Owner-used? |
+|---|---|---|---|
+| [2–3 closest; never assert a ranking without evidence] | | | |
+
+Owner install/use handoff completed: [date]. Private screenshots are not in
+this repository; only clean-room behavior notes are retained in
+`docs/UI-REFERENCE.md`. Never copy code, text, icons, assets, or distinctive
+screen composition.
+
 ## Reuse map (knowledge/reuse-first.md — scan before building)
 
 | Capability | Candidate (link, checked date) | Licence | Activity | Verdict (DEPEND/ADAPT/STUDY/BUILD/REJECT) | Why |

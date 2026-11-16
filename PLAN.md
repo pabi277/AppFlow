@@ -15,18 +15,40 @@
 | **1 · PLAN** | exactly one (P0) | research + the plan docs as chat deliverables | one exit Summary gate (§4), then stop |
 | **2 · EXECUTE** | one per phase | the app repo (phase 0), then one working increment per chat | CI green + **downloadable APK artifact** + docs updated + report; merge gate in [RULES](RULES.md) |
 
-- No repository, no app code, no Play/account action in the plan chat.
+- No repository, no app code, no Play Console/account action in the plan chat.
+  The owner may install a free public comparator from its official Google Play
+  listing; no payment, account change, or third-party APK/sideload is part of
+  this research step.
+- After the owner selects an app direction, research the **top 2–3 closest
+  Google Play comparables** (India Play listing links, search phrase, check
+  date, visible ratings/review themes and evidence limits; never present an
+  unverified store rank as fact).
+  Recommend one for the owner to install and use; pause for their screenshots
+  and observations before finalizing the visual brief. This is a research
+  handoff, not another DECIDE-ONCE question batch.
+- **Third-party reference handling:** use the owner's screenshots only as
+  temporary private design context. Never commit or push them to GitHub (even
+  a private app repo); if a working copy is needed, keep it in an ignored
+  `design/private-play-reference/` and verify it is ignored before use. Keep
+  only clean-room behavior notes, citations, and the app's own tokens/spec in
+  `docs/`. Keep ignored local copies available through completion and approval
+  of all app UI phases, then remove them from the workspace; do not delete the
+  owner's originals. The durable, clean-room UI spec remains in GitHub. Never
+  copy competitor code, text, icons, assets, or distinctive screen composition.
 - The plan chat also runs the **reuse scan** (`knowledge/reuse-first.md` §2)
   for the whole app — architecture base, ONE UI base sample, data, and
   ads/billing — so the roadmap is priced on reuse, not on writing everything.
   Hand-building anything the scan has not covered is not planned work.
-- **UI is designed on the web first** (`knowledge/ui-reference-site.md`):
-  the plan chat names the reference stack and lists every screen+state
-  (no site is built in the plan chat); in Phase 0 the disposable
-  phone-shaped reference site is built, **owner-approved in chat, and
-  its tokens frozen** in `docs/UI-REFERENCE.md` — before any app UI code
-  beyond the hello screen. No UI phase builds against an unapproved
-  reference.
+- **UI is benchmarked, then designed on the web** (`knowledge/ui-reference-site.md`):
+  after the app-direction pick, the owner receives 2–3 similar Play listings,
+  installs/uses a selected comparator, and supplies screenshots/notes. In
+  Phase 0 the disposable phone-shaped app-specific reference site is built,
+  **owner-approved in chat, and its tokens frozen** in `docs/UI-REFERENCE.md`
+  — before any app UI code beyond the hello screen. Competitor screenshots
+  are temporary, private, never committed, and kept locally through all UI
+  implementation phases; remove working copies after the final UI approval.
+  Only clean-room notes/specification remain in GitHub. No UI phase
+  builds against an unapproved reference.
 - Phases run in order. A new phase starts only when the previous phase is
   recorded done (or explicitly held by the owner).
 
@@ -42,11 +64,11 @@ live in `templates/` (`docs-system/`, `rule-app.md`, `prompt-app.md`,
 | `README.md` | what the app is (from `templates/readme-app.md`, provenance line kept) |
 | `rule.md` (repo root) | **the app's own operating manual** — laws, merge gate, question policy, work cycle, invariants, definition of done. Self-contained: authoritative even if AppFlow is unreachable (`templates/rule-app.md`) |
 | `prompt.md` (repo root) | the **self-contained continuation prompt** — paste it into the next chat; updated at every phase end (§6, `templates/prompt-app.md`) |
-| `docs/RESEARCH.md` | 3–5 evidence-backed options (links + check dates), the niche verdict line, **rejected options with reasons**, the pre-written kill test, and the **reuse map** (`knowledge/reuse-first.md`) |
-| `docs/UI-REFERENCE.md` | the **UI design specification**: chosen reference stack, every screen+state, frozen tokens, web→Compose mapping, owner approval record, deliberate native adaptations (`templates/docs-system/UI_REFERENCE.md`; workflow: `knowledge/ui-reference-site.md`) |
+| `docs/RESEARCH.md` | 3–5 evidence-backed options (links + check dates), the niche verdict line, **rejected options with reasons**, the pre-written kill test, dated 2–3 Play comparables, and the **reuse map** (`knowledge/reuse-first.md`) |
+| `docs/UI-REFERENCE.md` | the **UI design specification**: chosen web reference stack, every screen+state, frozen tokens, web→Compose mapping, owner approval record, deliberate native adaptations, and dated Play comparator/clean-room notes (never competitor screenshots) (`templates/docs-system/UI_REFERENCE.md`; workflow: `knowledge/ui-reference-site.md`) |
 | `docs/ROADMAP.md` | numbered **phases** in execution order; one phase = one chat; status 📋 planned · 🚧 in progress · ✅ done · ❌ cancelled (keep the row) |
 | `docs/DECISIONS.md` | the dated decision log — **the anti-re-ask register**: owner decisions, law waivers, agent decisions |
-| `docs/phases/NN-<slug>.md` | one record per phase: its parts, evidence (`file:line`), what shipped, tests, **what the APK shows** |
+| `docs/phases/NN-<slug>.md` | one record per phase: its parts, evidence (`file:line`), what shipped, tests, **what the APK shows**; release-readiness records a safe summary of the pre-launch security review |
 
 That is the whole set — nothing else is needed from anywhere.
 
@@ -161,6 +183,13 @@ Each phase chat ends with **all** of:
    open GitHub, the branch, or any file to get it. `prompt.md` in the
    repo remains only the durable backup if a chat is lost;
 7. and a stop at the merge gate.
+
+The release-readiness phase also completes the applicable checks in
+[`knowledge/pre-launch-security-audit.md`](knowledge/pre-launch-security-audit.md)
+before any production submission. Detailed findings stay in an ignored,
+local-only `SECURITY-AUDIT.md` and are deleted after fixes; the phase record
+contains only a safe summary. No Critical/High finding may remain open at the
+production gate.
 
 Quality is proven **without device tests**: the phase's no-device gate
 (`knowledge/fast-quality-no-device.md` §1 — unit + screenshot + lint in

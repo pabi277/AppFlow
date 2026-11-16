@@ -21,7 +21,8 @@ app templates or a new app repository.
 - Search for changed Google Play and AdMob requirements; update dated claims
   and their sources, not just wording.
 - Re-verify knowledge/open-source-references.md,
-  knowledge/web-ui-references.md, and knowledge/reuse-first.md:
+  knowledge/web-ui-references.md, knowledge/reuse-first.md, and
+  knowledge/pre-launch-security-audit.md:
   open every catalogue link; record archived, silent, licence-changed, or
   superseded entries with the check date and replace them — never judge by
   stars/forks alone (popularity can be inflated; licence and recent activity
@@ -44,8 +45,9 @@ app templates or a new app repository.
   template files carry the MIT header.
 - Inspect every workflow for permission scope, secret handling, action versions,
   signing output paths, and safe behavior on pull requests.
-- Re-read privacy, Data Safety, tester, and ad guidance against current official
-  documentation. Remove stale examples rather than guessing.
+- Re-read privacy, Data Safety, tester, ad, security-audit, and competitor-UI
+  reference guidance against current official sources. Remove stale examples
+  rather than guessing; keep third-party screenshots out of Git.
 - Check that the repository contains no real keys, account IDs, AdMob IDs,
   private tester details, or unnecessary personal data. The only intentional
   personal-email exception is the pair listed in `RULES.md`; do not duplicate it.

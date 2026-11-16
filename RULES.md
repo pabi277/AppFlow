@@ -35,6 +35,29 @@ multiple ad-driven or paid mechanics.
 - Compare and recommend; do not decide for the owner. The owner may choose,
   combine, or refine an option. Do not create an app repository or write app
   code until the owner explicitly selects a researched direction.
+- After the owner selects an app direction, research its 2–3 closest Google
+  Play comparables in the India storefront, cite listings/search phrase/date/
+  evidence limits, and recommend a free app from its official listing for the
+  owner to install and use (paid apps require the money GATE; no third-party
+  APKs). Pause for the owner's screenshots/observations before finalizing the
+  UI brief; this is a handoff, not an extra decide-once question batch. Never
+  claim an unsupported store ranking.
+- Competitor screenshots are temporary, private context: never commit/push
+  them, even to private GitHub repos. If a working copy is needed, add
+  `design/private-play-reference/` to `.gitignore` before copying and verify
+  it with `git check-ignore`. Keep only clean-room behavior notes and dated
+  citations; keep temporary local copies until all UI phases are complete,
+  then remove them without deleting the owner's originals. The clean-room
+  spec remains in GitHub. Never copy code, text, icons, assets, or distinctive
+  screen composition.
+- Every app completes the applicable
+  [`knowledge/pre-launch-security-audit.md`](knowledge/pre-launch-security-audit.md)
+  checks before production. Read-only first; test only owned local/preview/
+  staging systems; never request/expose secrets or run destructive/real-money
+  tests. Fix only owner-approved findings, re-test, and block production on
+  open Critical/High findings. Keep detailed reports local-only/ignored and
+  delete after remediation; retain only a safe summary. This first-pass review
+  is not a professional penetration test.
 - Maintain `APP_LIST.md` as the portfolio register. Record the exact official
   Google Play title only when confirmed in Play Console or on the live listing;
   include package ID, listing URL, status, and verification date. Never invent

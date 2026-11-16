@@ -36,6 +36,13 @@ screenshot tests approved/updated, lint/detekt result, CI run id. A
 physical device never gates a phase; the one release-time device pass
 (§3 of that file) is recorded in the release phase record only.]
 
+## Security review (release phase only)
+
+- Date/scope: [ ] · Counts: [passed / fixed / open / CAN'T VERIFY / N/A]
+- Critical/High remaining: [none, or blocked] · Private report ignored and
+  removed after remediation: [yes/no] · safe owner follow-ups: [IDs only]
+- Never put exploit details, secrets, or personal data in this phase record.
+
 ## UI reference comparison (UI phases only)
 
 - [Reference screen/state vs app screenshot reviewed side-by-side;

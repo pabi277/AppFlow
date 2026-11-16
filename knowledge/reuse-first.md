@@ -129,17 +129,27 @@ you own:
 
 ### C. Agent-driven RE tools (e.g. REA) — WATCH, not default
 
-Tools like `morluto/rea` (an MCP/CLI layer over Ghidra/JADX/Hopper,
-checked 2026-10-22) can drive decompilers for an agent and return
-evidence records. AppFlow posture: **do not adopt as a default.** It
-needs a desktop (Node + JDK + providers), which the phone-first flow
-does not have; its popularity signals are unverifiable (see
-[open-source-references.md](open-source-references.md)); and for your
-own apps you already hold the source. Re-evaluate only if a future app
-genuinely needs binary analysis, and then: official source only
-(`github.com/morluto/rea`, npm `rea-agents` — lookalike downloads have
-carried malware), pinned version, dry-run setup, own artefacts only,
-disposable environment. Full note in the catalogue.
+Tools like `morluto/rea` (MIT; rechecked 2026-11-16 via its
+[GitHub API](https://api.github.com/repos/morluto/rea) and
+[latest release API](https://api.github.com/repos/morluto/rea/releases/latest);
+latest `rea-agents-6.9.0`, published 2026-11-11) can drive binary-analysis
+tools for an agent and return evidence records. The reported 463,016 stars
+and 113,362 forks are extraordinary, especially against prior abrupt jumps;
+treat them as unverified popularity, not evidence of quality.
+
+AppFlow posture: **do not adopt as a default.** REA is a reverse-engineering
+tool, not an app framework, UI source, or Android runtime dependency; its
+desktop/tool-provider setup does not fit the phone-first flow. Its popularity
+signals are not trustworthy evidence (see
+[open-source-references.md](open-source-references.md)); for your own apps,
+you usually already hold the source. Existing APK Analyzer/JADX/Apktool are
+simpler defaults for inspecting your own release artefacts.
+
+Re-evaluate only if a future app genuinely needs binary analysis: official
+source only (`github.com/morluto/rea`, npm `rea-agents` — lookalike downloads
+have carried malware), pinned version, dry-run setup, own artefacts only, and
+a disposable environment. REA cannot make an app "better" by itself; consider
+it only for a real, lawful own-binary analysis need. Full note in the catalogue.
 
 ## 5. Anti-patterns (each one costs a phase if it slips in)
 

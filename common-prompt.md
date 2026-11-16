@@ -29,8 +29,8 @@ https://github.com/pabi277/AppFlow at commit <SHA> — PLAN.md, START.md,
 RULES.md, PROMPTS.md (P0), templates/rule-app.md, templates/prompt-app.md,
 knowledge/niche-method.md, knowledge/reuse-first.md,
 knowledge/open-source-references.md, knowledge/app-engineering.md,
-knowledge/ui-reference-site.md, and knowledge/web-ui-references.md —
-and follow PLAN.md stage 1 exactly. That
+knowledge/ui-reference-site.md, knowledge/pre-launch-security-audit.md,
+and knowledge/web-ui-references.md — and follow PLAN.md stage 1 exactly. That
 commit is the pinned playbook for this app.
 
 Goal of this ONE chat: all research and a complete, self-contained plan for a
@@ -48,6 +48,16 @@ and ten recent one-star reviews each. Separate observed facts from inference
 and state uncertainty. Include my real advantage, a distinct offline-first
 v1, privacy/licensing/policy risks, plausible monetization (no revenue
 promises), and a measurable kill test written before results.
+
+After I select the app direction, research the 2–3 closest Play Store apps
+for that exact idea (dated, linked listings; evidence limits; observed review
+signals, no guessed rank). Recommend one for me to install and use. Pause for
+my screenshots and observations before finalizing the UI brief; this is a
+handoff, not an extra DECIDE-ONCE question batch. Keep screenshots private,
+temporary, and never in GitHub (even private). Keep only clean-room notes in
+GitHub; retain ignored local copies through all UI implementation phases, then
+delete them after final UI approval. Never copy code, text, icons, assets, or
+distinctive screen composition.
 
 2. Question policy — ask less, gate always (PLAN.md §3): record every answer
 with its date the moment it is given (it belongs in docs/DECISIONS.md) and
@@ -86,7 +96,8 @@ reachable:
      phase 0 = bootstrap incl. row 0-D the UI reference site + tokens
      freeze; merge anything smaller than half a day of work into
      a neighbour), every "Done means" cell including the downloadable APK
-     that shows the phase's increment;
+     that shows the phase's increment; include release-readiness security
+     checks from knowledge/pre-launch-security-audit.md before production;
    - docs/DECISIONS.md — every answer so far, dated; law waivers in their own
      section;
    - rule.md — from templates/rule-app.md, filled with identity, time budget,
@@ -94,6 +105,11 @@ reachable:
    - prompt.md — from templates/prompt-app.md, filled with identity and the
      next phase;
    - README.md — from templates/readme-app.md, filled.
+   Record the Play comparator research and clean-room UI observations in
+   docs/RESEARCH.md and docs/UI-REFERENCE.md, never the screenshots/assets.
+   Make the app's own rule.md explain the temporary-reference and pre-launch
+   security-audit rules; include the applicable security-review milestone in
+   the roadmap and final Play checklist.
 Sketch screens and the asset/data schema inside phase records — never as code.
 
 5. Exit gate — ONE Summary batch and nothing else, then STOP (no repo, no

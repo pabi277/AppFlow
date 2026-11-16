@@ -92,6 +92,18 @@ already answered in chat or docs · taste with an obvious default.
   verify.
 - The privacy policy and Data Safety answers stay truthful to the shipped
   build. Licenses of vendored code are recorded in `docs/DECISIONS.md`.
+- Competitor screenshots are private temporary references: never commit them;
+  if needed, copy only to `design/private-play-reference/` after adding that
+  path to `.gitignore` and verifying with `git check-ignore`; keep only
+  clean-room notes, and keep ignored local copies until all app UI phases finish;
+  then remove them. Preserve the clean-room spec in GitHub.
+  Do not copy third-party code, text, icons, assets, or distinctive composition.
+- Complete the applicable pre-launch security review in frozen
+  `knowledge/pre-launch-security-audit.md`; report only safe counts/status in
+  phase notes. Keep detailed `SECURITY-AUDIT.md` ignored/local-only, remove it
+  after remediation, and do not ship with Critical/High findings open. Never
+  request or expose secrets; test only owned preview/staging/local systems.
+  Follow the exact owner-approval gate for fixes and external actions.
 - Reuse stays lawful: only licence-compatible code is depended on or
   adapted (MIT/Apache/BSD into any app; GPL code only into a GPL app);
   studied targets (GPL/AGPL/closed apps) are re-implemented clean-room —
